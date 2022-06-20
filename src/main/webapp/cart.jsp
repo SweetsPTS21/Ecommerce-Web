@@ -109,33 +109,22 @@
         element[i].classList.remove("active");
     }
     element[idpage-1].classList.add("active");
-
-
     var ship = document.getElementsByClassName("ship");
     var total = document.getElementsByClassName("total");
+    var temp = 0;
     async function getData() {
-        let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=ha noi&appid=7c186e6ad2a59dc9c66cfb11b00cb3cc
-`
+        let apiURL = 'https://api.openweathermap.org/data/2.5/weather?q=ha noi&appid=7c186e6ad2a59dc9c66cfb11b00cb3cc'
         let data = await fetch(apiURL).then(res => res.json())
-
         temp = (data.main.feels_like - 273.15).toFixed(0)
-        console.log((data.main.feels_like - 273.15))
-        console.log(temp)
+        if(temp < 25) {
+            ship[0].innerHTML = "$0";
+        }
+        else {
+            ship[0].innerHTML = "$20";
+            var totalPrice = <%= total %> + 20;
+            total[0].innerHTML = "$" + totalPrice;
+        }
     }
     getData()
-    console.log(temp)
-    if(temp < 25) {
-        ship[0].innerHTML = "$0";
-    }
-    else {
-        ship[0].innerHTML = "$20";
-        var totalPrice = parseInt(total[0].innerHTML.replace("$", "")) + 20;
-        total[0].innerHTML = "$" + totalPrice;
-    }
-
-
 </script>
 </html>
-
-
-

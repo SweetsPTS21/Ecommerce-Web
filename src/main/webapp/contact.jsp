@@ -17,7 +17,7 @@
 
 <section id="chitiet-lienlac" class="phan-doan-p1">
     <div class="chi-tiet">
-        <span>LIÊN LẠC VỚI CHÚNG TÔI 2</span>
+        <span>LIÊN LẠC VỚI CHÚNG TÔI</span>
         <h2>Ghé thăm chúng tôi</h2>
         <h3>Văn phòng </h3>
         <div>
