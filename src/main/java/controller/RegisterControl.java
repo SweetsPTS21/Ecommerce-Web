@@ -4,6 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import static AES.AES.encrypt;
 
 @WebServlet(name = "RegisterControl", value = "/register")
 public class RegisterControl extends HttpServlet {
@@ -23,9 +24,6 @@ public class RegisterControl extends HttpServlet {
 
         String reg = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$";
 
-        System.out.println(username);
-        System.out.println(password);
-        System.out.println(email);
         HttpSession session = request.getSession();
         if (username.isEmpty() || password.isEmpty() || email.isEmpty() || re_password.isEmpty()) {
             session.setAttribute("error", "Dữ liệu không được để trống");
@@ -50,7 +48,7 @@ public class RegisterControl extends HttpServlet {
 
                 }
                 else {
-                    userDAO.addUser(username, email, password);
+                    userDAO.addUser(username, email, encrypt(password,"WeBteaM07"));
                     session.setAttribute("success", "Đăng ký thành công");
                     response.sendRedirect("/login.jsp");
                 }

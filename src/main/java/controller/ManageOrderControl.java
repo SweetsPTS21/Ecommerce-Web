@@ -20,7 +20,7 @@ public class ManageOrderControl extends HttpServlet {
         HttpSession session = request.getSession();
 
         /*
-        * Mục đích: Check admin trước khi chuyển đến quản lý hóa
+        * Mục đích: Check admin trước khi chuyển đến quản lý hóa đơn
         *
         */
 
