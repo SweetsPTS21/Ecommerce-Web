@@ -43,7 +43,7 @@
 
 </section>
 <section id="form-chi-tiet">
-    <form action="">
+    <form action="contact">
         <span></span>
         <h2>Chúng tôi rất mong những ý kiến từ bạn</h2>
         <input type="text" placeholder="Tên của bạn">
