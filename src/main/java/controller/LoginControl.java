@@ -30,7 +30,7 @@ public class LoginControl extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("email", email);
             session.setAttribute("userName", userDAO.getUserName());
-            session.setAttribute("userID",userDAO.getUserID());
+            session.setAttribute("userID",user.getId());
             session.setAttribute("isAdmin", user.getRole());
             if(request.getAttribute("authenication") != null) {
                 request.removeAttribute("authenication");

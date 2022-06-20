@@ -39,7 +39,7 @@ public class CheckoutControl extends HttpServlet {
             product = productDAO.getProductById(cartItem.getId());
             total += cartItem.getCartQuantity() * product.getPrice();
         }
-        int orderID = checkoutDAO.add(String.valueOf(userID),username,number,add, String.valueOf(total));
+        int orderID = checkoutDAO.add(userID, username, number, add, total);
         for(Cart cartItem: cart) {
             int quantity = cartItem.getCartQuantity();
             int productID = cartItem.getId();

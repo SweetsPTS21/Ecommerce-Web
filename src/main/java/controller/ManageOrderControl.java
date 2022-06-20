@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(name = "ManageOrderControl", value = "/manageOrder")
+@WebServlet(name = "ManageOrdersControl", value = "/manageOrder")
 public class ManageOrderControl extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -18,11 +18,6 @@ public class ManageOrderControl extends HttpServlet {
         response.setContentType("text/html; charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
-
-        /*
-        * Mục đích: Check admin trước khi chuyển đến quản lý hóa đơn
-        *
-        */
 
         try {
             int id = Integer.parseInt(session.getAttribute("isAdmin").toString());
