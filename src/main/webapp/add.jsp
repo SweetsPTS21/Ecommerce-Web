@@ -1,6 +1,5 @@
 <%@ page import="java.util.List" %>
-<%@ page import="dao.ProductDAO" %>
-<%@ page import="java.util.List" %>
+<%@ page import="dao.SanPhamDAO" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -26,8 +25,8 @@
   <h2>Thêm <b>sản phẩm</b></h2>
 </div>
 <div id="sua-san-pham">
-  <%  ProductDAO productDAO = new ProductDAO();
-    List<String> listCategory = productDAO.getAllCategory(); %>
+  <%  SanPhamDAO sanPhamDAO = new SanPhamDAO();
+    List<String> listLoai = sanPhamDAO.getTatCaLoai(); %>
   <form action="addProduct" method="post" class="form-sua">
     <div class="dau-form">
       <h4 class="tieu-de-form">Thêm sản phẩm mới</h4>
@@ -36,29 +35,29 @@
     <div class="than-form">
       <div class="nhom-form">
         <label><p>Tên</p></label>
-        <input name="name" type="text" required>
+        <input name="ten" type="text" required>
       </div>
       <div class="nhom-form">
         <label><p>Ảnh</p></label>
-        <input name="image" type="text" placeholder="Nhập link ảnh" required>
+        <input name="anh" type="text" placeholder="Nhập link ảnh" required>
       </div>
       <div class="nhom-form">
         <label><p>Giá($)</p></label>
-        <input name="price" type="text" required>
+        <input name="gia" type="text" required>
       </div>
       <div class="nhom-form">
         <label><p>Số lượng</p></label>
-        <input name="quantity" required>
+        <input name="soluong" required>
       </div>
       <div class="nhom-form">
         <label><p>Mô tả</p></label>
-        <textarea name="description" class="form-mo-ta" required></textarea>
+        <textarea name="mota" class="form-mo-ta" required></textarea>
       </div>
       <div class="chon-form">
         <label>Danh mục</label>
-        <select name="category" aria-label="Mặc định">
-          <% for(String category : listCategory) {%>
-          <option><%=category%></option>
+        <select name="loai" aria-label="Mặc định">
+          <% for(String loai : listLoai) {%>
+          <option><%=loai%></option>
           <% } %>
         </select>
       </div>

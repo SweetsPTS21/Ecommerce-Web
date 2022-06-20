@@ -1,4 +1,4 @@
-<%@ page import="model.Product" %>
+<%@ page import="model.SanPham" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,26 +14,26 @@
 
 <body>
 
-    <% Product product = new Product();
-        product = (Product) request.getAttribute("product");
-        int productId = product.getId();
+    <% SanPham sanPham = new SanPham();
+        sanPham = (SanPham) request.getAttribute("sanpham");
+        int sanPhamId = sanPham.getId();
     %>
     <%@include file="header.jsp" %>
 
     <section id="chitiet-sanpham" class="phan-doan-p1">
         <div class="anh-san-pham">
-            <img src="<%= product.getImage() %>" width="100%" id="MainImg" alt="">
+            <img src="<%= sanPham.getAnh() %>" width="100%" id="MainImg" alt="">
         </div>
         <div class="anh-chi-tiet">
-            <h4><%= product.getCategory() %> </h4>
-            <h4><%= product.getName() %></h4>
-            <h2>$<%= product.getPrice() %></h2>
+            <h4><%= sanPham.getLoai() %> </h4>
+            <h4><%= sanPham.getTen() %></h4>
+            <h2>$<%= sanPham.getGia() %></h2>
             <br>
-            <a href="/add-to-cart?productId=<%= productId %>">
+            <a href="/add-to-cart?sanPhamId=<%= sanPhamId %>">
                 <button class="normal">Thêm vào giỏ hàng</button>
             </a>
             <h4>Mô tả sản phẩm</h4>
-            <span><%= product.getDescription() %></span>
+            <span><%= sanPham.getMota() %></span>
         </div>
     </section>
     <%@include file="footer.jsp" %>

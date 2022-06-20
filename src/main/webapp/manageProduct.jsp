@@ -3,11 +3,11 @@
     Created on : Dec 28, 2020, 5:19:02 PM
     Author     : boixi
 --%>
-<%@ page import="dao.ProductDAO" %>
-<%@ page import="model.Product" %>
+<%@ page import="dao.SanPhamDAO" %>
+<%@ page import="model.SanPham" %>
 <%@ page import="java.util.List" %>
-<%@ page import="dao.OrderDetailDAO" %>
-<%@ page import="model.OrderDetail" %>
+<%@ page import="dao.ChiTietDAO" %>
+<%@ page import="model.ChiTiet" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -32,9 +32,9 @@
     if(id != 1 || session.getAttribute("isAdmin") == null) {
         response.sendRedirect("index.jsp");
     } else {
-        ProductDAO productDAO = new ProductDAO();
-        List<Product> products = productDAO.getAllProducts();
-        List<String> listCategory = productDAO.getAllCategory();
+        SanPhamDAO sanPhamDAO = new SanPhamDAO();
+        List<SanPham> listSanPham = sanPhamDAO.getTatCaSanPham();
+        List<String> listLoai = sanPhamDAO.getTatCaLoai();
 
 %>
 <section id="dautrang">
@@ -70,20 +70,20 @@
         </tr>
         </thead>
         <tbody>
-        <% for (Product product : products) { %>
+        <% for (SanPham sanPham : listSanPham) { %>
         <tr>
-            <td><%=product.getId()%></td>
-            <td><%=product.getName()%></td>
+            <td><%=sanPham.getId()%></td>
+            <td><%=sanPham.getTen()%></td>
             <td>
-                <img src="<%=product.getImage()%>">
+                <img src="<%=sanPham.getAnh()%>">
             </td>
-            <td><%=product.getPrice()%> $</td>
+            <td><%=sanPham.getGia()%> $</td>
             <td>
-                <%deleteId = product.getId();%>
-                <a href="editProduct?productId=<%=product.getId()%>" class="edit" id="edit"><i class="material-icons" data-toggle="tooltip" title="Sửa">&#xE254;</i></a>
+                <%deleteId = sanPham.getId();%>
+                <a href="editProduct?sanPhamId=<%=sanPham.getId()%>" class="edit" id="edit"><i class="material-icons" data-toggle="tooltip" title="Sửa">&#xE254;</i></a>
                 <a href="#" class="delete" id="delete" onclick="function xacnhan() {
                         if(confirm('Xóa sản phẩm này nhé!!!') == true) {
-                        window.location.href='deleteProduct?productId=<%=deleteId%>';
+                        window.location.href='deleteProduct?sanPhamId=<%=deleteId%>';
                         }
                         } xacnhan()"><i class="material-icons" data-toggle="tooltip" title="Xóa">&#xE872;</i></a>
             </td>

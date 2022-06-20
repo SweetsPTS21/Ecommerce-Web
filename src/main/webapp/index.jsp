@@ -1,5 +1,5 @@
-<%@ page import="dao.ProductDAO" %>
-<%@ page import="model.Product" %>
+<%@ page import="dao.SanPhamDAO" %>
+<%@ page import="model.SanPham" %>
 <%@ page import="java.util.List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -21,8 +21,8 @@
 <body>
 
 <%
-    ProductDAO productDAO = new ProductDAO();
-    List<Product> products = productDAO.getAllProducts();
+    SanPhamDAO sanPhamDAO = new SanPhamDAO();
+    List<SanPham> listSanPham = sanPhamDAO.getTatCaSanPham();
 %>
 
 
@@ -35,7 +35,7 @@
     <h1>Bán hàng công nghệ</h1>
     <% } else {  %>
     <h1>Xin chào
-        <% String name = (String) session.getAttribute("userName");
+        <% String name = (String) session.getAttribute("tenNguoiDung");
             out.print(name);
         %>
     </h1>
@@ -46,17 +46,17 @@
     <h2>Sản phẩm nổi bật</h2>
     <p>Bộ sưu tập Laptop</p>
     <div class="ngan-san-pham">
-        <% for (Product product : products) {
-            int id = product.getId();
-            if(product.getCategory().equals("Laptop")){ %>
-        <div class="san-pham" onclick="window.location.href='detail?productId=<%= id %>';">
-            <img src="<%= product.getImage() %>" alt="">
+        <% for (SanPham sanPham : listSanPham) {
+            int id = sanPham.getId();
+            if(sanPham.getLoai().equalsIgnoreCase("Laptop")){ %>
+        <div class="san-pham" onclick="window.location.href='detail?sanPhamId=<%= id %>';">
+            <img src="<%= sanPham.getAnh() %>" alt="">
             <div class="mo-ta">
-                <span><%= product.getCategory() %></span>
-                <h5><%= product.getName() %></h5>
-                <h4><%= product.getPrice() %>$</h4>
+                <span><%= sanPham.getLoai() %></span>
+                <h5><%= sanPham.getTen() %></h5>
+                <h4><%= sanPham.getGia() %>$</h4>
             </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            <a href="#"><i class="fal fa-shopping-gioHang gioHang"></i></a>
         </div>
         <% } } %>
     </div>
@@ -66,17 +66,17 @@
     <h2>Sản phẩm nổi bật</h2>
     <p>Bộ sưu tập điện thoại</p>
     <div class="ngan-san-pham">
-        <% for (Product product : products) {
-            int id = product.getId();
-            if(product.getCategory().equals("Phone")){ %>
-        <div class="san-pham" onclick="window.location.href='detail?productId=<%= id %>';">
-            <img src="<%= product.getImage() %>" alt="">
+        <% for (SanPham sanPham : listSanPham) {
+            int id = sanPham.getId();
+            if(sanPham.getLoai().equalsIgnoreCase("Phone")){ %>
+        <div class="san-pham" onclick="window.location.href='detail?sanPhamId=<%= id %>';">
+            <img src="<%= sanPham.getAnh() %>" alt="">
             <div class="mo-ta">
-                <span><%= product.getCategory() %></span>
-                <h5><%= product.getName() %></h5>
-                <h4>$<%= product.getPrice() %></h4>
+                <span><%= sanPham.getLoai() %></span>
+                <h5><%= sanPham.getTen() %></h5>
+                <h4>$<%= sanPham.getGia() %></h4>
             </div>
-            <a href="detail?productId=<%= id %>"><i class="fal fa-shopping-cart cart"></i></a>
+            <a href="detail?sanPhamId=<%= id %>"><i class="fal fa-shopping-gioHang gioHang"></i></a>
         </div>
         <% } } %>
     </div>

@@ -1,5 +1,6 @@
-<%@ page import="model.Product" %>
+<%@ page import="model.SanPham" %>
 <%@ page import="java.util.List" %>
+<%@ page import="model.SanPham" %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -26,8 +27,8 @@
     <h2>Sửa <b>thông tin sản phẩm</b></h2>
 </div>
 <div id="sua-san-pham">
-    <% Product product = (Product) session.getAttribute("product");
-        List<String> listCategory = (List) session.getAttribute("listCategory"); %>
+    <% SanPham sanPham = (SanPham) session.getAttribute("sanpham");
+        List<String> listLoai = (List) session.getAttribute("listLoai"); %>
     <form action="updateProduct" method="post" class="form-sua">
         <div class="dau-form">
             <h4 class="tieu-de-form">Cập nhật thông tin</h4>
@@ -36,36 +37,36 @@
         <div class="than-form">
             <div class="nhom-form">
                 <label><p>ID</p></label>
-                <input value="<%=product.getId()%>" name="id" type="text" readonly required>
+                <input value="<%=sanPham.getId()%>" name="id" type="text" readonly required>
             </div>
             <div class="nhom-form">
                 <label><p>Tên</p></label>
-                <input value="<%=product.getName()%>" name="name" type="text" required>
+                <input value="<%=sanPham.getTen()%>" name="ten" type="text" required>
             </div>
             <div class="nhom-form">
                 <label><p>Ảnh</p></label>
-                <input value="<%=product.getImage()%>" name="image" type="text" required>
+                <input value="<%=sanPham.getAnh()%>" name="anh" type="text" required>
             </div>
             <div class="nhom-form">
                 <label><p>Giá($)</p></label>
-                <input value="<%=product.getPrice()%>" name="price" type="text" required>
+                <input value="<%=sanPham.getGia()%>" name="gia" type="text" required>
             </div>
             <div class="nhom-form">
                 <label><p>Số lượng</p></label>
-                <input value="<%=product.getQuantity()%>" name="quantity" required>
+                <input value="<%=sanPham.getSoluong()%>" name="soluong" required>
             </div>
             <div class="nhom-form">
                 <label><p>Mô tả</p></label>
-                <textarea name="description" class="form-mo-ta" required><%=product.getDescription()%></textarea>
+                <textarea name="mota" class="form-mo-ta" required><%=sanPham.getMota()%></textarea>
             </div>
             <div class="chon-form">
                 <label>Danh mục</label>
-                <select name="category" aria-label="Mặc định">
-                    <% for(String category : listCategory) {
-                        if(category.equalsIgnoreCase(product.getCategory())) { %>
-                    <option selected><%=category%></option>
+                <select name="loai" aria-label="Mặc định">
+                    <% for(String loai : listLoai) {
+                        if(loai.equalsIgnoreCase(sanPham.getLoai())) { %>
+                    <option selected><%=loai%></option>
                     <% } else { %>
-                    <option><%=category%></option>
+                    <option><%=loai%></option>
                     <% } } %>
                 </select>
             </div>

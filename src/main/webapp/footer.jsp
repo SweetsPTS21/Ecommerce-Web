@@ -1,5 +1,5 @@
-<%@ page import="dao.ProductDAO" %>
-<%@ page import="model.Product" %>
+<%@ page import="dao.SanPhamDAO" %>
+<%@ page import="model.SanPham" %>
 <%@ page import="java.util.List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -28,7 +28,7 @@
     </div>
     <div class="cot">
         <a href="login.jsp">Đăng nhập</a>
-        <a href="cart.jsp">Giỏ hàng</a>
+        <a href="gioHang.jsp">Giỏ hàng</a>
     </div>
 </footer>
 </body>

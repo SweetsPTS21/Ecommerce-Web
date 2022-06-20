@@ -1,7 +1,8 @@
-<%@ page import="model.Cart" %>
-<%@ page import="model.Product" %>
-<%@ page import="dao.ProductDAO" %>
+<%@ page import="model.GioHang" %>
+<%@ page import="model.SanPham" %>
+<%@ page import="dao.SanPhamDAO" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="dao.SanPhamDAO" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <!DOCTYPE html>
@@ -18,9 +19,9 @@
 
 <body>
 <%
-    ArrayList<Cart> cart = (ArrayList<Cart>) session.getAttribute("cart");
-    ProductDAO productDAO = new ProductDAO();
-    Product product = new Product();
+    ArrayList<GioHang> gioHang = (ArrayList<GioHang>) session.getAttribute("cart");
+    SanPhamDAO sanPhamDAO = new SanPhamDAO();
+    SanPham sanPham = new SanPham();
     int total = 0;
     int ship = 0;
     int temp = 0;
@@ -41,22 +42,22 @@
         </tr>
         </thead>
         <tbody>
-        <% if(cart != null) {%>
-        <% for(Cart cartItem: cart) {
-            product = productDAO.getProductById(cartItem.getId());
-            int totalPrice = cartItem.getCartQuantity() * product.getPrice();
+        <% if(gioHang != null) {%>
+        <% for(GioHang gioHangItem : gioHang) {
+            sanPham = sanPhamDAO.getSanPhamById(gioHangItem.getId());
+            int totalPrice = gioHangItem.getSoLuongGioHang() * sanPham.getGia();
             total += totalPrice;
         %>
         <tr>
-            <td><a href="/delete?productId=<%=product.getId()%>"><i class="far fa-times-circle"></i></a></td>
-            <td><img src="<%= product.getImage() %>" alt=""></td>
-            <td><%= product.getName() %></td>
-            <td>$<%= product.getPrice() %></td>
+            <td><a href="/delete?sanPhamId=<%=sanPham.getId()%>"><i class="far fa-times-circle"></i></a></td>
+            <td><img src="<%= sanPham.getAnh() %>" alt=""></td>
+            <td><%= sanPham.getTen() %></td>
+            <td>$<%= sanPham.getGia() %></td>
             <td>
                 <div class="number">
-                    <a href="/removequantity?removeproductid=<%=product.getId()%>" class="quantity"><span class="minus">-</span></a>
-                    <input type="text" value="<%=cartItem.getCartQuantity()%>"/>
-                    <a href="/addquantity?addproductid=<%=product.getId()%>" class="quantity"><span class="plus">+</span></a>
+                    <a href="/removequantity?xoaSanPhamId=<%=sanPham.getId()%>" class="quantity"><span class="minus">-</span></a>
+                    <input type="text" value="<%=gioHangItem.getSoLuongGioHang()%>"/>
+                    <a href="/addquantity?themSanPhamId=<%=sanPham.getId()%>" class="quantity"><span class="plus">+</span></a>
                 </div>
             </td>
             <td>$<%= totalPrice %></td>
@@ -88,9 +89,9 @@
 <section class="thong-tin">
     <div class="form-thong-tin">
         <form action="/checkout" method="post" accept-charset="UTF-8">
-            <input required type="text"   name="name" placeholder = "Họ và tên">
-            <input required type="text"   name="number" placeholder = "Số điện thoại">
-            <input required type="text"   name="add" placeholder = "Địa chỉ">
+            <input required type="text"   name="ten" placeholder = "Họ và tên">
+            <input required type="text"   name="sodienthoai" placeholder = "Số điện thoại">
+            <input required type="text"   name="diachi" placeholder = "Địa chỉ">
             <input type="submit" class="but" value="Thanh toán" >
         </form>
     </div>

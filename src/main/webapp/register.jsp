@@ -28,9 +28,9 @@
                 <h1>Đăng ký</h1>
                 <form method="post" action="/register" accept-charset="UTF-8">
                     <input type="email" name="email" placeholder="Email"><br>
-                    <input type="text" name="username" placeholder="Tên"><br>
-                    <input type="password" name="password" placeholder="Mật khẩu"><br>
-                    <input type="password" name="re_password" placeholder="Nhập lại mật khẩu"><br>
+                    <input type="text" name="taikhoan" placeholder="Tên"><br>
+                    <input type="password" name="matkhau" placeholder="Mật khẩu"><br>
+                    <input type="password" name="re_matkhau" placeholder="Nhập lại mật khẩu"><br>
                     <input type="submit" class="but" value="Đăng ký" >
                 </form>
                     <% String error = (String) session.getAttribute("error"); %>

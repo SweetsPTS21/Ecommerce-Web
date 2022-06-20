@@ -26,13 +26,13 @@
         <div class="home-login">
             <div class="wrapper">
                 <h1>Đăng nhập</h1>
-                <%if(request.getAttribute("authenication") != null && (int) request.getAttribute("authenication") == 1 ) {%>
+                <%if(request.getAttribute("xacthuc") != null && (int) request.getAttribute("xacthuc") == 1 ) {%>
                 <h3 style="color: red">Email/mật khẩu không đúng</h3>
-                <% request.removeAttribute("authenication"); } else  {%>
+                <% request.removeAttribute("xacthuc"); } else  {%>
                 <% } %>
                 <form action="/login" method="post">
                     <input type="email" name="email" placeholder="Email"><br>
-                    <input type="password" name="password" placeholder="Mật khẩu"><br>
+                    <input type="password" name="matkhau" placeholder="Mật khẩu"><br>
                     <input type="submit" class="but" value="Đăng nhập" >
                 </form>
                 <p class="not-mem">
