@@ -43,14 +43,11 @@
 
 </section>
 <section id="form-chi-tiet">
-    <form action="contact">
-        <span></span>
-        <h2>Chúng tôi rất mong những ý kiến từ bạn</h2>
-        <input type="text" placeholder="Tên của bạn">
-        <input type="text" placeholder="E-mail">
-        <input type="text" placeholder="Chủ đề">
-        <textarea name="" id="" cols="30" rows="10" placeholder="Nội dung"></textarea>
-        <button class="btn-mail">Gửi mail</button>
+    <form method="post" action="/contact">
+        <h2>Hãy để lại email của bạn tại đây</h2>
+        <input type="text" name ="emailName"placeholder="Tên của bạn">
+        <input type="text" name ="email" placeholder="E-mail">
+        <button class="btn-mail">Xác nhận</button>
     </form>
 </section>
 <%@include file="footer.jsp" %>

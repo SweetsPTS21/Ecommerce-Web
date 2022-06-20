@@ -141,4 +141,51 @@ public class SanPhamDAO extends DBconnection {
         }
         return list;
     }
+    public List<SanPham> timSanPhamTheoLoai(String categoryName) {
+        List<SanPham> list = new ArrayList<>();
+        String sql = "select * from product where productCategory like ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, "%" + categoryName + "%");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                SanPham product = new SanPham();
+                product.setId(rs.getInt("productId"));
+                product.setTen(rs.getString("productName"));
+                product.setGia(rs.getInt("productPrice"));
+                product.setMota(rs.getString("productDescription"));
+                product.setAnh(rs.getString("productImg"));
+                product.setLoai(rs.getString("productCategory"));
+                list.add(product);
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public List<SanPham> getProductByOrderID(String ID) {
+        List<SanPham> list = new ArrayList<>();
+        String sql = "select product.productName, product.productPrice, product.productImg, orderdetail.quantity from webptit.product \n" +
+                "join webptit.orderdetail on product.productId = orderdetail.productId where orderdetail.orderId = ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, ID);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                SanPham sanPham = new SanPham();
+                sanPham.setTen(rs.getString("productName"));
+                sanPham.setGia(rs.getInt("productPrice"));
+                sanPham.setAnh(rs.getString("productImg"));
+                sanPham.setSoluong(rs.getInt("quantity"));
+                list.add(sanPham);
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
 }

@@ -1,6 +1,7 @@
 package dao;
 
 import model.ChiTiet;
+import model.DonDatHang;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -39,8 +40,7 @@ public class ChiTietDAO extends DBconnection {
             e.printStackTrace();
         }
 
-
         return chiTietList;
-
     }
+
 }

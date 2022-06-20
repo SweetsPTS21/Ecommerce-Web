@@ -41,6 +41,7 @@
             <% if (session.getAttribute("email") == null) { %>
             <li><a href="login.jsp">Đăng nhập</a></li>
             <% }else{  %>
+            <li><a href="order.jsp">Đơn hàng</a></li>
             <li><a href="/logout">Đăng xuất</a></li>
             <% } %>
         </ul>

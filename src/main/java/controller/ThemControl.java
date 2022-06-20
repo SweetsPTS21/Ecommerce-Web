@@ -30,9 +30,7 @@ public class ThemControl extends HttpServlet {
         else {
             gioHang = gioHangItems;
             if(gioHangItems != null) {
-                for(GioHang item: gioHangItems) {
-                    tongitem += item.getSoLuongGioHang();
-                }
+
 
                 for(GioHang item: gioHangItems) {
                     if(item.getId() == gioHangItem.getId()) {

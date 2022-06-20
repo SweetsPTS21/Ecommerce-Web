@@ -36,6 +36,11 @@ public class ThanhToanControl extends HttpServlet {
         String sodienthoai = request.getParameter("sodienthoai");
         String diachi = request.getParameter("diachi");
 
+        String tinh = request.getParameter("ten_tinh");
+        String huyen = request.getParameter("ten_huyen");
+        String xa = request.getParameter("ten_xa");
+        diachi = diachi + ", "+ tinh + ", " + huyen + ", " + xa;
+
         ThanhToanDAO thanhToanDAO = new ThanhToanDAO();
         ArrayList<GioHang> gioHang = (ArrayList<GioHang>) session.getAttribute("cart");
         SanPhamDAO sanPhamDAO = new SanPhamDAO();

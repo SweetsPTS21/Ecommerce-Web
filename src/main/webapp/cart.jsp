@@ -23,8 +23,9 @@
     SanPhamDAO sanPhamDAO = new SanPhamDAO();
     SanPham sanPham = new SanPham();
     int total = 0;
-    int ship = 0;
-    int temp = 0;
+    String tinh = "";
+    String huyen = "";
+    String xa = "";
 %>
 <%@include file="header.jsp" %>
 
@@ -88,10 +89,26 @@
 </section>
 <section class="thong-tin">
     <div class="form-thong-tin">
+        <% if (session.getAttribute("email") == null) { %>
+        <form action="/login" method="post" accept-charset="UTF-8">
+        <% }else if(session.getAttribute("cart-size") == null ||session.getAttribute("cart-size").toString().equalsIgnoreCase("0") ) {  %>
+        <form action="index.jsp" method="post" accept-charset="UTF-8">
+            <% } else {%>
         <form action="/checkout" method="post" accept-charset="UTF-8">
+            <% } %>
             <input required type="text"   name="ten" placeholder = "Họ và tên">
             <input required type="text"   name="sodienthoai" placeholder = "Số điện thoại">
-            <input required type="text"   name="diachi" placeholder = "Địa chỉ">
+            <div class="province-select">
+                <select name="ten_tinh" id="tinh">
+                </select>
+
+                <select name="ten_huyen" id="huyen">
+                </select>
+
+                <select name="ten_xa" id="xa">
+                </select>
+            </div>
+            <input required type="text"   name="diachi" placeholder = "Địa chỉ cụ thể">
             <input type="submit" class="but" value="Thanh toán" >
         </form>
     </div>
@@ -132,7 +149,71 @@
     }
     getData()
 
-
+    var tinh = document.getElementById('tinh');
+    var huyen = document.getElementById('huyen');
+    var xa = document.getElementById('xa');
+    var data
+    var tinh_arr = [];
+    var huyen_arr = [];
+    for (let i = 0; i < 100; i++) {
+        huyen_arr[i] = new Array(100);
+    }
+    var xa_arr = [];
+    for (let i = 0; i < 100; i++) {
+        xa_arr[i] = new Array(100);
+    }
+    for (let i = 0; i < 100; i++) {
+        for (let j = 0; j < 100; j++) {
+            xa_arr[i][j] = new Array(100);
+        }
+    }
+    async function tinhss() {
+        let apiURL = `https://provinces.open-api.vn/api/?depth=3`
+        data = await fetch(apiURL).then(res => res.json())
+        for (let i = 0; i < data.length; i++) {
+            let option = document.createElement('option');
+            option.value = data[i].name;
+            option.innerText = data[i].name;
+            tinh.appendChild(option);
+            tinh_arr.push(data[i].name)
+        }
+        tinh.addEventListener("click", function () {
+            let tinh_code = tinh.value;
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].name == tinh_code) {
+                    let huyen = document.getElementById('huyen');
+                    huyen.innerHTML = '';
+                    xa.innerHTML = '';
+                    for (let j = 0; j < data[i].districts.length; j++) {
+                        let option = document.createElement('option');
+                        option.value = data[i].districts[j].name;
+                        option.innerText = data[i].districts[j].name;
+                        huyen.appendChild(option);
+                        huyen_arr[i][j] = data[i].districts[j].name;
+                    }
+                }
+            }
+        })
+        huyen.addEventListener("click", function () {
+            let huyen_code = huyen.value;
+            for (let i = 0; i < data.length; i++) {
+                for (let j = 0; j < data[i].districts.length; j++) {
+                    if (data[i].districts[j].name == huyen_code) {
+                        let xa = document.getElementById('xa');
+                        xa.innerHTML = '';
+                        for (let k = 0; k < data[i].districts[j].wards.length; k++) {
+                            let option = document.createElement('option');
+                            option.value = data[i].districts[j].wards[k].name;
+                            option.innerText = data[i].districts[j].wards[k].name;
+                            xa.appendChild(option);
+                            xa_arr[i][j][k] = data[i].districts[j].wards[k].name;
+                        }
+                    }
+                }
+            }
+        })
+    }
+    tinhss()
 
 
 </script>

@@ -801,3 +801,60 @@ td:nth-child(6) {
 .search-box input {
     width: 200px;
 }
+
+.phan-loai {
+    width: 200px;
+    margin-left: 80px;
+}
+
+.phan-loai a {
+    text-decoration: none;
+    color: black;
+}
+
+.phan-loai a:hover {
+    color: #088178;
+}
+
+.detail-but {
+    text-decoration: none;
+    color:#088178;
+}
+
+
+.province-select {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#tinh {
+    width: 32%;
+    height: 35px;
+}
+
+#tinh option {
+    width: 32%;
+    height: 35px;
+}
+
+
+#huyen {
+    width: 32%;
+    height: 35px;
+}
+
+#huyen option {
+    width: 32%;
+    height: 35px;
+}
+
+#xa {
+    width: 32%;
+    height: 35px;
+}
+
+#xa option {
+    width: 32%;
+    height: 35px;
+}
