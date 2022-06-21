@@ -37,7 +37,7 @@
 
 <%@include file="DauTrang.jsp" %>
 
-<section id="cart" class="phan-doan-p1">
+<section id="gio-hang" class="phan-doan-p1">
     <table width="100%">
         <thead>
         <tr>
@@ -63,9 +63,9 @@
             <td>$<%= sanPham.getGia() %></td>
             <td>
                 <div class="number">
-                    <a href="/xoaSoLuong?xoaSanPhamId=<%=sanPham.getId()%>" class="quantity"><span class="minus">-</span></a>
+                    <a href="/xoaSoLuong?xoaSanPhamId=<%=sanPham.getId()%>" class="so-luong"><span class="tru">-</span></a>
                     <input type="text" value="<%=gioHangItem.getSoLuongGioHang()%>"/>
-                    <a href="/themSoLuong?themSanPhamId=<%=sanPham.getId()%>" class="quantity"><span class="plus">+</span></a>
+                    <a href="/themSoLuong?themSanPhamId=<%=sanPham.getId()%>" class="so-luong"><span class="cong">+</span></a>
                 </div>
             </td>
             <td>$<%= totalPrice %></td>
@@ -75,8 +75,8 @@
     </table>
 </section>
 
-<section id="cart-add" class="phan-doan-p1">
-    <div id="subtotal">
+<section id="them-gio-hang" class="phan-doan-p1">
+    <div id="tong-tien">
         <h3>Tổng hoá đơn</h3>
         <table>
             <tr>
@@ -85,11 +85,11 @@
             </tr>
             <tr>
                 <td>Phí vận chuyển</td>
-                <td class="ship">$0</td>
+                <td class="van-chuyen">$0</td>
             </tr>
             <tr>
                 <td><strong>Tổng phải thanh toán</strong></td>
-                <td class="total"><strong>$<%= total %></strong></td>
+                <td class="tong"><strong>$<%= total %></strong></td>
             </tr>
         </table>
     </div>
@@ -103,7 +103,7 @@
             <% } %>
             <input required type="text"   name="ten" placeholder = "Họ và tên">
             <input required type="text"   name="sodienthoai" placeholder = "Số điện thoại">
-            <div class="province-select">
+            <div class="chon-tinh">
                 <select name="ten_tinh" id="tinh">
                 </select>
 
@@ -114,7 +114,7 @@
                 </select>
             </div>
             <input required type="text"   name="diachi" placeholder = "Địa chỉ cụ thể">
-            <input type="submit" class="but" value="Thanh toán" >
+            <input type="submit" class="nut" value="Thanh toán" >
         </form>
     </div>
 

@@ -22,10 +22,10 @@
 %>
 
 <%@include file="DauTrang.jsp" %>
-<div class="search-box">
+<div class="tim-kiem">
     <form action="timKiem" method = "post">
         <input value="${tukhoa}" type="text" name="tukhoa" placeholder="Tìm kiếm">
-        <i class="ti-search"></i>
+        <i class="ti-search"></i><i class="far fa-search"></i>
     </form>
 </div>
 <div class="phan-loai">
@@ -45,7 +45,7 @@
                     <h5>${o.ten}</h5>
                     <h4>$${o.gia}</h4>
                 </div>
-                <a href="chiTiet?sanPhamId=${o.id}"><i class="fal fa-shopping-cart cart"></i></a>
+                <a href="chiTiet?sanPhamId=${o.id}"><i class="fal fa-shopping-cart gio-hang"></i></a>
             </div>
         </c:forEach>
     </div>

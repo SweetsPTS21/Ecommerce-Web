@@ -16,15 +16,15 @@
 <%@include file="DauTrang.jsp" %>
 
 
-<section id="home">
-    <div class="max-width">
-        <div class="home-content">
+<section id="trang-chu">
+    <div class="chieu-rong-lon-nhat">
+        <div class="noi-dung-trang-chu">
             <h3>Quản lý <br>Tài khoản</h3>
             <p>Đăng nhập để lưu những món hàng bạn yêu thích và
                 địa chỉ giao hàng thường xuyên của bạn.</p>
         </div>
-        <div class="home-reg">
-            <div class="wrapper">
+        <div class="trang-dang-ky">
+            <div class="bao-quanh">
                 <h1>Đăng ký</h1>
                 <form method="post" action="/dangKy" accept-charset="UTF-8">
                     <input type="email" name="email" placeholder="Email"><br>
@@ -35,7 +35,7 @@
                 </form>
                     <% String error = (String) session.getAttribute("error"); %>
                     <% if (error != null) { %>
-                    <div class="error">
+                    <div class="loi">
                         <%= error %>
                     </div>
                     <% } %>

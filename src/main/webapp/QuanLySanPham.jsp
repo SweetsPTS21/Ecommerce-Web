@@ -48,14 +48,14 @@
         </ul>
     </div>
 </section>
-<section id="cart" class="phan-doan-p1">
+<section id="gio-hang" class="phan-doan-p1">
     <div id="quan-ly-dau">
-        <div class="row">
-            <div class="row">
+        <div class="hang">
+            <div class="hang">
                 <h2>Quản lý <b>sản phẩm</b></h2>
             </div>
             <div class="dau-nut">
-                <a href="ThemSanPham.jsp" class="but" id="nut2"><span>Thêm mói</span></a>
+                <a href="ThemSanPham.jsp" class="nut" id="nut2"><span>Thêm mới</span></a>
             </div>
         </div>
     </div>
@@ -80,7 +80,7 @@
             <td><%=sanPham.getGia()%> $</td>
             <td>
                 <%xoaId = sanPham.getId();%>
-                <a href="suaSanPham?sanPhamId=<%=sanPham.getId()%>" class="edit" id="edit"><i class="material-icons" data-toggle="tooltip" title="Sửa">&#xE254;</i></a>
+                <a href="suaSanPham?sanPhamId=<%=sanPham.getId()%>" class="sua" id="sua"><i class="material-icons" data-toggle="tooltip" title="Sửa">&#xE254;</i></a>
                 <a href="#" class="xoa" id="xoa" onclick="function xacnhan() {
                         if(confirm('Xóa sản phẩm này nhé!!!') == true) {
                         window.location.href='xoaProduct?sanPhamId=<%=xoaId%>';

@@ -93,7 +93,7 @@ form select {
     justify-content: space-between;
 }
 
-.submit {
+.gui {
     width: 70px;
     outline: none;
     padding: 12px 14px;
@@ -105,7 +105,7 @@ form select {
     cursor: pointer;
 }
 
-.submit:hover {
+.gui:hover {
     background-color: #51aca7;
 }
 

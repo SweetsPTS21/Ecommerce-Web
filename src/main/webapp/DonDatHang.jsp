@@ -36,9 +36,9 @@
     </ul>
   </div>
 </section>
-<section id="cart" class="phan-doan-p1">
+<section id="gio-hang" class="phan-doan-p1">
   <div id="quan-ly-dau">
-    <div class="row">
+    <div class="hang">
       <h2>Đơn hàng của tôi</h2>
     </div>
   </div>
@@ -72,7 +72,7 @@
         <% } %>
       </td>
       <td>
-        <a href = "chiTietDonHang?oid=<%=order.getId()%>" class="detail-but">Xem chi tiết</a>
+        <a href = "chiTietDonHang?oid=<%=order.getId()%>" class="nut-chi-tiet">Xem chi tiết</a>
       </td>
     </tr>
 

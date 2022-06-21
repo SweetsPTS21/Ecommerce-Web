@@ -73,7 +73,7 @@
 
         </div>
         <div class="chan-form">
-            <input type="submit" class="submit" value="Sửa">
+            <input type="submit" class="gui" value="Sửa">
 
         </div>
     </form>

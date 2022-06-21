@@ -35,9 +35,9 @@ public class GuiMailControl extends HttpServlet {
         final String username = "laptrinhweb07@gmail.com";
         final String password = "webteam07 ";
         Properties prop = new Properties();
-        prop.put("mail.smtp.host", "smtp.gamil.com");
-        prop.put("mail.smtp.port", "smtp.gamil.com");
-        prop.put("mail.smtp.auth", "smtp.gamil.com");
+        prop.put("mail.smtp.host", "smtp.gmail.com");
+        prop.put("mail.smtp.port", "smtp.gmail.com");
+        prop.put("mail.smtp.auth", "smtp.gmail.com");
         prop.put("mail.smtp.starttls.enable", "true");
         Session session = Session.getInstance(prop, new Authenticator(){
             protected PasswordAuthentication getPasswordAuthentication(){

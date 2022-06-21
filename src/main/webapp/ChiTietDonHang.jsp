@@ -37,7 +37,7 @@
 </section>
 <section id="cart" class="phan-doan-p1">
     <div id="quan-ly-dau">
-        <div class="row">
+        <div class="hang">
             <h2>Đơn hàng của tôi</h2>
         </div>
     </div>

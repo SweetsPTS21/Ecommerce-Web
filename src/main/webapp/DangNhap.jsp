@@ -16,15 +16,15 @@
 <%@include file="DauTrang.jsp" %>
 
 
-<section id="home">
-    <div class="max-width">
-        <div class="home-content">
+<section id="trang-chu">
+    <div class="chieu-rong-lon-nhat">
+        <div class="noi-dung-trang-chu">
             <h3>Quản lý <br>Tài khoản</h3>
             <p>Đăng nhập để lưu những món hàng bạn yêu thích và
                 địa chỉ giao hàng thường xuyên của bạn.</p>
         </div>
-        <div class="home-login">
-            <div class="wrapper">
+        <div class="dang-nhap">
+            <div class="bao-quanh">
                 <h1>Đăng nhập</h1>
                 <%if(request.getAttribute("xacthuc") != null && (int) request.getAttribute("xacthuc") == 1 ) {%>
                 <h3 style="color: red">Email/mật khẩu không đúng</h3>
@@ -33,9 +33,9 @@
                 <form action="/dangNhap" method="post">
                     <input type="email" name="email" placeholder="Email"><br>
                     <input type="password" name="matkhau" placeholder="Mật khẩu"><br>
-                    <input type="submit" class="but" value="Đăng nhập" >
+                    <input type="submit" class="nut" value="Đăng nhập" >
                 </form>
-                <p class="not-mem">
+                <p class="chua-dang-ky">
                     <a href="DangKy.jsp">Đăng ký ngay</a>
                 </p>
             </div>

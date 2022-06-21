@@ -91,12 +91,12 @@ body {
 /* Login */
 
 /*Login Page - Nối thêm vào style.css*/
-#home {
+#trang-chu {
     display: flex;
     background: #96C0D8;
 }
 
-#home .max-width {
+#trang-chu .chieu-rong-lon-nhat {
     width: 100%;
     display: flex;
     margin: 0 auto;
@@ -105,25 +105,25 @@ body {
 
 
 
-.max-width .home-content {
+.chieu-rong-lon-nhat .noi-dung-trang-chu {
     width: 50%;
     padding: 2rem;
 }
 
-.home-content h3 {
+.noi-dung-trang-chu h3 {
     color: rgb(255, 255, 255);
     font-size: 3.5rem;
     margin-top: 4rem;
 }
 
-.home-content p {
+.noi-dung-trang-chu p {
     margin-top: 1rem;
     padding: 0 5rem 0 0;
     font-size: 15px;
     color: rgb(255, 255, 255);
 }
 
-.but {
+.nut {
     padding: 9px 25px;
     font-size: 15px;
     color: #fff;
@@ -134,15 +134,15 @@ body {
     transition: all 0.3s ease 0s;
 }
 
-.but:hover {
+.nut:hover {
     background-color: #088178;
 }
 
-#home .home-login {
+#trang-chu .dang-nhap {
     width: 50%;
 }
 
-.home-login .wrapper {
+.dang-nhap .bao-quanh {
     width: 350px;
     padding: 2rem 0 1rem 0;
     margin: 110px auto;
@@ -151,7 +151,7 @@ body {
     text-align: center;
 }
 
-.wrapper h1 {
+.bao-quanh h1 {
     font-size: 2.3rem;
     margin-bottom: 14px;
 }
@@ -179,21 +179,21 @@ form button {
     cursor: pointer;
 }
 
-.not-mem {
+.chua-dang-ky {
     font-size: 1rem;
 }
 
-.not-mem a {
+.chua-dang-ky a {
     text-decoration: none;
     color: #07001f;
 }
 
 
-#home .home-reg {
+#trang-chu .trang-dang-ky {
     width: 50%;
 }
 
-.home-reg .wrapper {
+.trang-dang-ky .bao-quanh {
     width: 350px;
     padding: 2rem 0 1rem 0;
     margin: 110px auto;
@@ -292,7 +292,7 @@ form button {
     color: #088178;
 }
 
-#sanpham1 .san-pham .cart {
+#sanpham1 .san-pham .gio-hang {
     width: 40px;
     height: 40px;
     line-height: 40px;
@@ -358,7 +358,7 @@ form button {
     color: #088178;
 }
 
-#sanpham2 .san-pham .cart {
+#sanpham2 .san-pham .gio-hang {
     width: 40px;
     height: 40px;
     line-height: 40px;
@@ -463,7 +463,7 @@ footer a:hover {
 }
 
 
-button.normal {
+button.binh-thuong {
     font-size: 14px;
     font-weight: 600;
     padding: 15px 30px;
@@ -475,61 +475,61 @@ button.normal {
     outline: none;
 }
 
-#cart table {
+#gio-hang table {
     width: 100%;
     border-collapse: collapse;
 }
 
-#cart table img {
+#gio-hang table img {
     width: 70px;
 }
 
-#cart table td:nth-child(1) {
+#gio-hang table td:nth-child(1) {
     width: 100px;
     text-align: center;
 }
 
-#cart table td:nth-child(2) {
+#gio-hang table td:nth-child(2) {
     width: 150px;
     text-align: center;
 }
 
-#cart table td:nth-child(3) {
+#gio-hang table td:nth-child(3) {
     width: 250px;
     text-align: center;
 }
 
-#cart table td:nth-child(4),
+#gio-hang table td:nth-child(4),
 td:nth-child(5),
 td:nth-child(6) {
     width: 150px;
     text-align: center;
 }
 
-#cart table td:nth-child(5) input {
+#gio-hang table td:nth-child(5) input {
     width: 60px;
     padding: 10px;
 }
 
-#cart table thead {
+#gio-hang table thead {
     border: 1px solid gray;
 }
 
-#cart table thead td {
+#gio-hang table thead td {
     font-weight: 700;
     font-size: 13px;
     padding: 18px 0;
 }
 
-#cart table tbody tr td {
+#gio-hang table tbody tr td {
     padding-top: 15px;
 }
 
-#cart table tbody td {
+#gio-hang table tbody td {
     font-size: 13px;
 }
 
-#cart-add {
+#them-gio-hang {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -550,30 +550,30 @@ td:nth-child(6) {
 }
 
 
-#subtotal h3 {
+#tong-tien h3 {
     padding-bottom: 15px;
 }
 
 
-#subtotal button {
+#tong-tien button {
     background-color: #088178;
     color: #fff;
 }
 
-#subtotal {
+#tong-tien {
     width: 50%;
     margin-bottom: 30px;
     border: 1px solid gray;
     padding: 30px;
 }
 
-#subtotal table {
+#tong-tien table {
     border-collapse: collapse;
     width: 100%;
     margin-bottom: 20px;
 }
 
-#subtotal table td {
+#tong-tien table td {
     width: 50%;
     border: 1px solid gray;
     padding: 10px;
@@ -581,7 +581,7 @@ td:nth-child(6) {
 }
 
 
-.but {
+.nut {
     padding: 15px 30px;
     font-size: 14px;
     color: #fff;
@@ -599,17 +599,17 @@ td:nth-child(6) {
 /* About */
 
 
-#about-head {
+#doan-gioi-thieu {
     display: flex;
     align-items: center;
 }
 
-#about-head img {
+#doan-gioi-thieu img {
     width: 50%;
     height: auto;
 }
 
-#about-head div {
+#doan-gioi-thieu div {
     padding-left: 40px;
 }
 
@@ -706,7 +706,7 @@ td:nth-child(6) {
     color: #000;
 }
 
-.btn-mail {
+.nut-mail {
     font-size: 14px;
     font-weight: 600;
     padding: 15px 30px;
@@ -721,15 +721,15 @@ td:nth-child(6) {
 }
 
 
-.number span {cursor:pointer; }
-.minus, .plus{
+.chu-so span {cursor:pointer; }
+.tru, .cong{
     height:100%;
     display: inline-block;
     vertical-align: baseline;
     text-align: center;
     font-size: 24px;
 }
-.number input {
+.chu-so input {
     height: 30px;
     width: 100px;
     text-align: center;
@@ -738,68 +738,68 @@ td:nth-child(6) {
     vertical-align: baseline;
 }
 
-.number a {
+.chu-so a {
     color: black;
     text-decoration: none;
 }
 
 
 /* Manager Page */
-#cart .dau-nut {
+#gio-hang .dau-nut {
     display: flex;
     flex-wrap: wrap;
     margin-left: 90%;
 }
 
-#cart #dau-nut-2 {
+#gio-hang #dau-nut-2 {
     margin-left: 90%;
 }
 
-#cart .dau-nut a {
+#gio-hang .dau-nut a {
     margin: 30px 30px 30px 0;
     text-decoration: none;
 }
 
-#cart .chan-nut {
+#gio-hang .chan-nut {
     margin: 30px 30px 30px 0;
 }
 
-#cart #nut1, #nut3 {
+#gio-hang #nut1, #nut3 {
     background-color: #27679b;
 }
 
-#cart #nut4 {
+#gio-hang #nut4 {
     background-color: darkgray;
 }
 
-#cart #nut5 {
+#gio-hang #nut5 {
     margin-left: 15px;
     background-color: #b8120e;
 }
 
-#cart table th, td {
+#gio-hang table th, td {
     padding: 15px;
     text-align: center;
 }
 
-#cart #nut1:hover, #nut3:hover {
+#gio-hang #nut1:hover, #nut3:hover {
     background-color: rgba(55, 149, 214, 0.99);
 }
 
-#cart #nut2:hover {
+#gio-hang #nut2:hover {
     background-color: rgba(8, 129, 120, 0.78);
 }
 
-#cart #nut5:hover {
+#gio-hang #nut5:hover {
     background-color: rgba(204, 18, 14, 0.7);
 }
 
-#quan-ly-dau .row {
+#quan-ly-dau .hang {
     margin-bottom: 30px;
 }
 
 /*Search box*/
-.search-box {
+.tim-kiem {
     position: relative;
     display: flex;
     flex-direction: row-reverse;
@@ -807,7 +807,7 @@ td:nth-child(6) {
     margin-top: 10px;
 }
 
-.search-box input {
+.tim-kiem input {
     width: 200px;
 }
 
@@ -825,13 +825,13 @@ td:nth-child(6) {
     color: #088178;
 }
 
-.detail-but {
+.nut-chi-tiet {
     text-decoration: none;
     color:#088178;
 }
 
 
-.province-select {
+.chon-tinh {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;

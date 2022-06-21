@@ -13,7 +13,7 @@
 
 <body>
 <%@include file="DauTrang.jsp" %>
-<section id="about-head" class="phan-doan-p1">
+<section id="doan-gioi-thieu" class="phan-doan-p1">
         <img src="img/about/a6.jpg" alt="">
         <div>
             <h2>Chúng Tôi Là Ai?</h2>

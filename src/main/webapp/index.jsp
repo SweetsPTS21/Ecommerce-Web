@@ -76,7 +76,7 @@
                 <h5><%= sanPham.getTen() %></h5>
                 <h4>$<%= sanPham.getGia() %></h4>
             </div>
-            <a href="chiTiet?sanPhamId=<%= id %>"><i class="fal fa-shopping-cart cart"></i></a>
+            <a href="chiTiet?sanPhamId=<%= id %>"><i class="fal fa-shopping-cart gio-hang"></i></a>
         </div>
         <% } } %>
     </div>

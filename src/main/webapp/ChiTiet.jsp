@@ -30,7 +30,7 @@
             <h2>$<%= sanPham.getGia() %></h2>
             <br>
             <a href="/themVaoGioHang?sanPhamId=<%= sanPhamId %>">
-                <button class="normal">Thêm vào giỏ hàng</button>
+                <button class="binh-thuong">Thêm vào giỏ hàng</button>
             </a>
             <h4>Mô tả sản phẩm</h4>
             <span><%= sanPham.getMota() %></span>
