@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ThanhToanDAO extends DBconnection{
-    public int add(int nguoiDungId, String username, String phonenumber, String address, int total) {
+    public int themDonDatHang(int nguoiDungId, String username, String phonenumber, String address, int total) {
         String sql = "INSERT INTO webptit.order (userID, name, phone, address,totalPrice, date, status) VALUES (?, ?, ?, ?, ?, current_date, ?)";
         try {
             PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -33,7 +33,7 @@ public class ThanhToanDAO extends DBconnection{
         return 0;
     }
 
-    public List<DonDatHang> getAllOrder() {
+    public List<DonDatHang> getTatCaDonDatHang() {
         String sql = "SELECT * FROM webptit.order";
         List<DonDatHang> donDatHangList = new ArrayList<>();
         try {
@@ -59,7 +59,7 @@ public class ThanhToanDAO extends DBconnection{
     }
 
 
-    public DonDatHang getOrderById(int id) {
+    public DonDatHang getDonDatHangById(int id) {
         String sql = "SELECT * FROM order WHERE orderId = ?";
         DonDatHang donDatHang = new DonDatHang();
         try {
@@ -83,11 +83,11 @@ public class ThanhToanDAO extends DBconnection{
         return donDatHang;
     }
 
-    public void updateStatus(int id, int status) {
+    public void capNhatTrangThai(int id, int trangthai) {
         String sql = "UPDATE webptit.order SET status = ? WHERE orderId = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setInt(1, status);
+            ps.setInt(1, trangthai);
             ps.setInt(2, id);
             ps.executeUpdate();
         } catch (Exception e) {

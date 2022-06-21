@@ -9,7 +9,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import javax.servlet.http.HttpSession;
 
-@WebServlet(name = "DangNhapControl", value = "/login")
+@WebServlet(name = "DangNhapControl", value = "/dangNhap")
 public class DangNhapControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -40,7 +40,7 @@ public class DangNhapControl extends HttpServlet {
         else {
             thatbai = 1;
             request.setAttribute("xacthuc", thatbai);
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            request.getRequestDispatcher("DangNhap.jsp").forward(request, response);
         }
     }
 }

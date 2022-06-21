@@ -27,7 +27,7 @@
 <body>
 <% try {
     int id = Integer.parseInt(session.getAttribute("isAdmin").toString());
-    int deleteId = 0;
+    int xoaId = 0;
 
     if(id != 1 || session.getAttribute("isAdmin") == null) {
         response.sendRedirect("index.jsp");
@@ -43,8 +43,8 @@
     <div>
         <ul id="thanh-dieu-huong">
             <li><a href="index.jsp" id="1"   class="actived">Trang chủ</a></li>
-            <li><a href="manageProduct.jsp" id="2"  class="actived">Quản lý sản phẩm</a></li>
-            <li><a href="manageOrder.jsp" id="3"  class="actived">Quản lý đơn đặt hàng</a></li>
+            <li><a href="QuanLySanPham.jsp" id="2" class="actived">Quản lý sản phẩm</a></li>
+            <li><a href="QuanLyDonHang.jsp" id="3" class="actived">Quản lý đơn đặt hàng</a></li>
         </ul>
     </div>
 </section>
@@ -55,7 +55,7 @@
                 <h2>Quản lý <b>sản phẩm</b></h2>
             </div>
             <div class="dau-nut">
-                <a href="add.jsp" class="but" id="nut2"><span>Thêm mói</span></a>
+                <a href="ThemSanPham.jsp" class="but" id="nut2"><span>Thêm mói</span></a>
             </div>
         </div>
     </div>
@@ -79,11 +79,11 @@
             </td>
             <td><%=sanPham.getGia()%> $</td>
             <td>
-                <%deleteId = sanPham.getId();%>
-                <a href="editProduct?sanPhamId=<%=sanPham.getId()%>" class="edit" id="edit"><i class="material-icons" data-toggle="tooltip" title="Sửa">&#xE254;</i></a>
-                <a href="#" class="delete" id="delete" onclick="function xacnhan() {
+                <%xoaId = sanPham.getId();%>
+                <a href="suaSanPham?sanPhamId=<%=sanPham.getId()%>" class="edit" id="edit"><i class="material-icons" data-toggle="tooltip" title="Sửa">&#xE254;</i></a>
+                <a href="#" class="xoa" id="xoa" onclick="function xacnhan() {
                         if(confirm('Xóa sản phẩm này nhé!!!') == true) {
-                        window.location.href='deleteProduct?sanPhamId=<%=deleteId%>';
+                        window.location.href='xoaProduct?sanPhamId=<%=xoaId%>';
                         }
                         } xacnhan()"><i class="material-icons" data-toggle="tooltip" title="Xóa">&#xE872;</i></a>
             </td>

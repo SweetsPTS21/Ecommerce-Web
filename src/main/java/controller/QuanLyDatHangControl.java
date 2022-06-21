@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(name = "ManageOrdersControl", value = "/manageOrder")
+@WebServlet(name = "QuanLyDatHangControl", value = "/quanLyDonHang")
 public class QuanLyDatHangControl extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -25,7 +25,7 @@ public class QuanLyDatHangControl extends HttpServlet {
                 response.sendRedirect("/index.jsp");
             }
             else {
-                response.sendRedirect("/manageOrder.jsp");
+                response.sendRedirect("/QuanLyDonHang.jsp");
             }
         } catch (NullPointerException e) {
             e.printStackTrace();

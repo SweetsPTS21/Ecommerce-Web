@@ -23,12 +23,12 @@
         <img class="logo" src="img/logo.png" alt="">
     </div>
     <div class="cot">
-        <a href="about.jsp">Về chúng tôi</a>
-        <a href="contact.jsp">Liên hệ</a>
+        <a href="ThongTin.jsp">Về chúng tôi</a>
+        <a href="LienHe.jsp">Liên hệ</a>
     </div>
     <div class="cot">
-        <a href="login.jsp">Đăng nhập</a>
-        <a href="gioHang.jsp">Giỏ hàng</a>
+        <a href="DangNhap.jsp">Đăng nhập</a>
+        <a href="GioHang.jsp">Giỏ hàng</a>
     </div>
 </footer>
 </body>

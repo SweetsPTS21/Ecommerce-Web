@@ -141,12 +141,12 @@ public class SanPhamDAO extends DBconnection {
         }
         return list;
     }
-    public List<SanPham> timSanPhamTheoLoai(String categoryName) {
+    public List<SanPham> timSanPhamTheoLoai(String loaiSanPhamName) {
         List<SanPham> list = new ArrayList<>();
         String sql = "select * from product where productCategory like ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setString(1, "%" + categoryName + "%");
+            ps.setString(1, "%" + loaiSanPhamName + "%");
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 SanPham product = new SanPham();

@@ -23,7 +23,7 @@
         response.sendRedirect("index.jsp");
     } else {
         ThanhToanDAO thanhToanDAO = new ThanhToanDAO();
-        List<DonDatHang> donDatHangList = thanhToanDAO.getAllOrder();
+        List<DonDatHang> donDatHangList = thanhToanDAO.getTatCaDonDatHang();
 
 %>
 
@@ -33,8 +33,8 @@
     <div>
         <ul id="thanh-dieu-huong">
             <li><a href="index.jsp" id="1"   class="actived">Trang chủ</a></li>
-            <li><a href="manageProduct.jsp" id="2"  class="actived">Quản lý sản phẩm</a></li>
-            <li><a href="manageOrder.jsp" id="3"  class="actived">Quản lý đơn đặt hàng</a></li>
+            <li><a href="QuanLySanPham.jsp" id="2" class="actived">Quản lý sản phẩm</a></li>
+            <li><a href="QuanLyDonHang.jsp" id="3" class="actived">Quản lý đơn đặt hàng</a></li>
         </ul>
     </div>
 </section>
@@ -70,7 +70,7 @@
             <td>
                 <% if(donDatHang.getTrangthai().equalsIgnoreCase("0")) { %>
                 <button type="button" class="but" id="nut2" onclick="function xacnhan() {
-                        window.location.href = 'updateOrder?donDatHangId=<%=donDatHang.getId()%>';
+                        window.location.href = 'capNhatDonHang?donDatHangId=<%=donDatHang.getId()%>';
                         } xacnhan()">Xác nhận</button>
                 <% } else { %>
                 <button type="button" class="but" id="nut4" disabled>Đã duyệt</button>

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "ThemSanPhamControl", value = "/addProduct")
+@WebServlet(name = "ThemSanPhamControl", value = "/themSanPham")
 public class ThemSanPhamControl extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
@@ -36,7 +36,7 @@ public class ThemSanPhamControl extends HttpServlet {
 
             sanPhamDAO.themSanPham(sanPham);
 
-            response.sendRedirect("manageProduct");
+            response.sendRedirect("quanLySanPham");
         } catch (NullPointerException | NumberFormatException e) {
             e.printStackTrace();
         }

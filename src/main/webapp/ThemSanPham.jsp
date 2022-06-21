@@ -11,7 +11,7 @@
   <title>Quản lý sản phẩm</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link href="edit.css" rel="stylesheet" type="text/css"/>
+  <link href="Sua.css" rel="stylesheet" type="text/css"/>
 
 <body>
 <% try {
@@ -27,10 +27,10 @@
 <div id="sua-san-pham">
   <%  SanPhamDAO sanPhamDAO = new SanPhamDAO();
     List<String> listLoai = sanPhamDAO.getTatCaLoai(); %>
-  <form action="addProduct" method="post" class="form-sua">
+  <form action="themSanPham" method="post" class="form-sua">
     <div class="dau-form">
       <h4 class="tieu-de-form">Thêm sản phẩm mới</h4>
-      <button onclick="window.location.href = 'manageProduct?isAdmin=1';" type="button" aria-hidden="true">&times;</button>
+      <button onclick="window.location.href = 'quanLySanPham?isAdmin=1';" type="button" aria-hidden="true">&times;</button>
     </div>
     <div class="than-form">
       <div class="nhom-form">

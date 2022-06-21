@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "SuaSanPhamControl", value = "/editProduct")
+@WebServlet(name = "SuaSanPhamControl", value = "/suaSanPham")
 public class SuaSanPhamControl extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -27,6 +27,6 @@ public class SuaSanPhamControl extends HttpServlet {
         List<String> listLoai = sanPhamDAO.getTatCaLoai();
         session.setAttribute("sanpham", sanPham);
         session.setAttribute("listLoai", listLoai);
-        response.sendRedirect("/edit.jsp");
+        response.sendRedirect("/SuaSanPham.jsp");
     }
 }

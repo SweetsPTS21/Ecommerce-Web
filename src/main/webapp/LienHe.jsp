@@ -13,7 +13,7 @@
 
 
 <body>
-<%@include file="header.jsp" %>
+<%@include file="DauTrang.jsp" %>
 
 <section id="chitiet-lienlac" class="phan-doan-p1">
     <div class="chi-tiet">
@@ -43,14 +43,14 @@
 
 </section>
 <section id="form-chi-tiet">
-    <form method="post" action="/contact">
+    <form method="post" action="/lienHe">
         <h2>Hãy để lại email của bạn tại đây</h2>
         <input type="text" name ="emailName"placeholder="Tên của bạn">
         <input type="text" name ="email" placeholder="E-mail">
         <button class="btn-mail">Xác nhận</button>
     </form>
 </section>
-<%@include file="footer.jsp" %>
+<%@include file="ChanTrang.jsp" %>
 </body>
 <script>
     var idpage = 4;

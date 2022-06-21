@@ -2,7 +2,6 @@
 <%@ page import="model.SanPham" %>
 <%@ page import="dao.SanPhamDAO" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="dao.SanPhamDAO" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <!DOCTYPE html>
@@ -28,15 +27,15 @@
     String xa = "";
 %>
 
-<%if(request.getAttribute("chuaLogin") != null) { %>
+<%if(request.getAttribute("chuaDangNhap") != null) { %>
 <script>
     if(confirm('Hãy đăng nhập để thanh toán!!!')) {
-        window.location.href = 'login.jsp';
+        window.location.href = 'DangNhap.jsp';
     }
 </script>
 <% }%>
 
-<%@include file="header.jsp" %>
+<%@include file="DauTrang.jsp" %>
 
 <section id="cart" class="phan-doan-p1">
     <table width="100%">
@@ -58,15 +57,15 @@
             total += totalPrice;
         %>
         <tr>
-            <td><a href="/delete?sanPhamId=<%=sanPham.getId()%>"><i class="far fa-times-circle"></i></a></td>
+            <td><a href="/xoa?sanPhamId=<%=sanPham.getId()%>"><i class="far fa-times-circle"></i></a></td>
             <td><img src="<%= sanPham.getAnh() %>" alt=""></td>
             <td><%= sanPham.getTen() %></td>
             <td>$<%= sanPham.getGia() %></td>
             <td>
                 <div class="number">
-                    <a href="/removequantity?xoaSanPhamId=<%=sanPham.getId()%>" class="quantity"><span class="minus">-</span></a>
+                    <a href="/xoaSoLuong?xoaSanPhamId=<%=sanPham.getId()%>" class="quantity"><span class="minus">-</span></a>
                     <input type="text" value="<%=gioHangItem.getSoLuongGioHang()%>"/>
-                    <a href="/addquantity?themSanPhamId=<%=sanPham.getId()%>" class="quantity"><span class="plus">+</span></a>
+                    <a href="/themSoLuong?themSanPhamId=<%=sanPham.getId()%>" class="quantity"><span class="plus">+</span></a>
                 </div>
             </td>
             <td>$<%= totalPrice %></td>
@@ -97,12 +96,10 @@
 </section>
 <section class="thong-tin">
     <div class="form-thong-tin">
-        <% if (session.getAttribute("email") == null) { %>
-        <form action="/login" method="post" accept-charset="UTF-8">
-        <% }else if(session.getAttribute("cart-size") == null ||session.getAttribute("cart-size").toString().equalsIgnoreCase("0") ) {  %>
+        <% if(session.getAttribute("cart-size") == null ||session.getAttribute("cart-size").toString().equalsIgnoreCase("0") ) {  %>
         <form action="index.jsp" method="post" accept-charset="UTF-8">
             <% } else {%>
-        <form action="/checkout" method="post" accept-charset="UTF-8">
+        <form action="/thanhToan" method="post" accept-charset="UTF-8">
             <% } %>
             <input required type="text"   name="ten" placeholder = "Họ và tên">
             <input required type="text"   name="sodienthoai" placeholder = "Số điện thoại">
@@ -124,7 +121,7 @@
 </section>
 
 
-<%@include file="footer.jsp" %>
+<%@include file="ChanTrang.jsp" %>
 <script src="script.js"></script>
 </body>
 

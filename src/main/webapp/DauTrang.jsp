@@ -25,24 +25,24 @@
         <ul id="thanh-dieu-huong">
             <%
                 if(session.getAttribute("isAdmin") != null && Integer.parseInt(session.getAttribute("isAdmin").toString()) == 1) { %>
-            <li><a href="manageProduct?isAdmin=1">Quản lý</a></li>
+            <li><a href="quanLySanPham?isAdmin=1">Quản lý</a></li>
             <% } %>
             <li><a href="index.jsp" id="1"   class="actived">Trang chủ</a></li>
-            <li><a href="shop" id="2"  class="actived">Cửa hàng</a></li>
-            <li><a href="about.jsp" id="3"  class="actived">Về chúng tôi</a></li>
-            <li><a href="contact.jsp" id="4"  class="actived">Liên hệ</a></li>
-            <li id="lg-bag"><a href="cart.jsp" id="5"  class="actived"><i class="far fa-shopping-bag"></i> </a>
+            <li><a href="cuaHang" id="2"  class="actived">Cửa hàng</a></li>
+            <li><a href="ThongTin.jsp" id="3" class="actived">Về chúng tôi</a></li>
+            <li><a href="LienHe.jsp" id="4" class="actived">Liên hệ</a></li>
+            <li id="lg-bag"><a href="GioHang.jsp" id="5" class="actived"><i class="far fa-shopping-bag"></i> </a>
                 <sub>
                     <% if(session.getAttribute("cart-size") != null) {%>
                     <%= session.getAttribute("cart-size") %></sub></li>
             <% } else {%>
-            0</sub></li>
+            </sub></li>
             <% } %>
             <% if (session.getAttribute("email") == null) { %>
-            <li><a href="login.jsp">Đăng nhập</a></li>
+            <li><a href="DangNhap.jsp">Đăng nhập</a></li>
             <% }else{  %>
-            <li><a href="order.jsp">Đơn hàng</a></li>
-            <li><a href="/logout">Đăng xuất</a></li>
+            <li><a href="DonDatHang.jsp">Đơn hàng</a></li>
+            <li><a href="/dangXuat">Đăng xuất</a></li>
             <% } %>
         </ul>
     </div>

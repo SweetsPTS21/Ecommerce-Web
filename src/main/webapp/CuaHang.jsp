@@ -2,7 +2,6 @@
 <%@ page import="model.SanPham" %>
 <%@ page import="dao.SanPhamDAO" %>
 <%@ page import="java.util.List" %>
-<%@ page import="model.SanPham" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,9 +21,9 @@
     List<SanPham> listSanPham = sanPhamDAO.getTatCaSanPham();
 %>
 
-<%@include file="header.jsp" %>
+<%@include file="DauTrang.jsp" %>
 <div class="search-box">
-    <form action="search" method = "post">
+    <form action="timKiem" method = "post">
         <input value="${tukhoa}" type="text" name="tukhoa" placeholder="Tìm kiếm">
         <i class="ti-search"></i>
     </form>
@@ -32,21 +31,21 @@
 <div class="phan-loai">
     <table>
         <thead><h3 style="color: #088178">Danh mục sản phẩm</h3></thead>
-        <thead><h4><a href="category?cate=Laptop">Laptop</a></h4></thead>
-        <thead><h4><a href="category?cate=Phone">Phone</a></h4></thead>
+        <thead><h4><a href="loaiSanPham?loai=Laptop">Laptop</a></h4></thead>
+        <thead><h4><a href="loaiSanPham?loai=Phone">Phone</a></h4></thead>
     </table>
 </div>
 <section id="sanpham1" class="phan-doan-p1">
     <div class="ngan-san-pham">
         <c:forEach items="${list}" var='o'>
-            <div class="san-pham" onclick="window.location.href='detail?sanPhamId=${o.id}';">
+            <div class="san-pham" onclick="window.location.href='chiTiet?sanPhamId=${o.id}';">
                 <img src="${o.anh}" alt="">
                 <div class="mo-ta">
                     <span>${o.loai}</span>
                     <h5>${o.ten}</h5>
                     <h4>$${o.gia}</h4>
                 </div>
-                <a href="detail?sanPhamId=${o.id}"><i class="fal fa-shopping-cart cart"></i></a>
+                <a href="chiTiet?sanPhamId=${o.id}"><i class="fal fa-shopping-cart cart"></i></a>
             </div>
         </c:forEach>
     </div>
@@ -56,12 +55,12 @@
         <img class="logo" src="img/logo.png" alt="">
     </div>
     <div class="cot">
-        <a href="about.jsp">Về chúng tôi</a>
-        <a href="contact.jsp">Liên hệ</a>
+        <a href="ThongTin.jsp">Về chúng tôi</a>
+        <a href="LienHe.jsp">Liên hệ</a>
     </div>
     <div class="cot">
-        <a href="login.jsp">Đăng nhập</a>
-        <a href="cart.jsp">Giỏ hàng</a>
+        <a href="DangNhap.jsp">Đăng nhập</a>
+        <a href="GioHang.jsp">Giỏ hàng</a>
     </div>
 </footer>
 </body>

@@ -11,7 +11,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "SanPhamControl", value = "/shop")
+@WebServlet(name = "SanPhamControl", value = "/cuaHang")
 public class SanPhamControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -19,7 +19,7 @@ public class SanPhamControl extends HttpServlet {
         SanPhamDAO sanPhamDAO = new SanPhamDAO();
         List<SanPham> list = sanPhamDAO.getTatCaSanPham();
         request.setAttribute("list", list);
-        request.getRequestDispatcher("shop.jsp").forward(request, response);
+        request.getRequestDispatcher("CuaHang.jsp").forward(request, response);
     }
 
     @Override
@@ -28,6 +28,6 @@ public class SanPhamControl extends HttpServlet {
         SanPhamDAO sanPhamDAO = new SanPhamDAO();
         List<SanPham> list = sanPhamDAO.getTatCaSanPham();
         request.setAttribute("list", list);
-        request.getRequestDispatcher("shop.jsp").forward(request, response);
+        request.getRequestDispatcher("CuaHang.jsp").forward(request, response);
     }
 }

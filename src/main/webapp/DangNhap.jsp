@@ -13,7 +13,7 @@
 
 <body>
 
-<%@include file="header.jsp" %>
+<%@include file="DauTrang.jsp" %>
 
 
 <section id="home">
@@ -30,20 +30,20 @@
                 <h3 style="color: red">Email/mật khẩu không đúng</h3>
                 <% request.removeAttribute("xacthuc"); } else  {%>
                 <% } %>
-                <form action="/login" method="post">
+                <form action="/dangNhap" method="post">
                     <input type="email" name="email" placeholder="Email"><br>
                     <input type="password" name="matkhau" placeholder="Mật khẩu"><br>
                     <input type="submit" class="but" value="Đăng nhập" >
                 </form>
                 <p class="not-mem">
-                    <a href="register.jsp">Đăng ký ngay</a>
+                    <a href="DangKy.jsp">Đăng ký ngay</a>
                 </p>
             </div>
         </div>
     </div>
 </section>
 
-<%@include file="footer.jsp" %>
+<%@include file="ChanTrang.jsp" %>
 </body>
 
 </html>

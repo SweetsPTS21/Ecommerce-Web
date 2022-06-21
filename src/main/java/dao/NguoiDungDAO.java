@@ -7,8 +7,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import static AES.AES.decrypt;
-import static AES.AES.encrypt;
+import static AES.AES.giaiMa;
+import static AES.AES.maHoa;
 
 public class NguoiDungDAO extends DBconnection {
     public String tenNguoiDung;
@@ -82,7 +82,7 @@ public class NguoiDungDAO extends DBconnection {
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, email);
-            ps.setString(2, encrypt(matkhau,"WeBteaM07")); // encrypt matkhau
+            ps.setString(2, maHoa(matkhau,"WeBteaM07")); // encrypt matkhau
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
@@ -90,7 +90,7 @@ public class NguoiDungDAO extends DBconnection {
                 nguoiDung.setId(rs.getInt("userId"));
                 nguoiDung.setTaikhoan(rs.getString("userName"));
                 nguoiDung.setEmail(rs.getString("userEmail"));
-                String a = decrypt(rs.getString("userPassword"),"WeBteaM07"); // decrypt matkhau
+                String a = giaiMa(rs.getString("userPassword"),"WeBteaM07"); // decrypt matkhau
                 nguoiDung.setMatkhau(a);
                 nguoiDung.setSodienthoai(rs.getString("userPhoneNumber"));
                 nguoiDung.setDiachi(rs.getString("userAddress"));

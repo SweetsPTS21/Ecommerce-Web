@@ -8,7 +8,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "ChiTietControl", value = "/detail")
+@WebServlet(name = "ChiTietControl", value = "/chiTiet")
 public class ChiTietControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -20,7 +20,7 @@ public class ChiTietControl extends HttpServlet {
 
                 if (sanPhamDAO.getSanPhamById(id).getTen() != null) {
                     request.setAttribute("sanpham", sanPhamDAO.getSanPhamById(id));
-                    request.getRequestDispatcher("/detail.jsp").forward(request, response);
+                    request.getRequestDispatcher("/ChiTiet.jsp").forward(request, response);
                 } else {
                     response.sendRedirect("index.jsp");
                 }

@@ -12,7 +12,7 @@
 </head>
 
 <body>
-<%@include file="header.jsp" %>
+<%@include file="DauTrang.jsp" %>
 <section id="about-head" class="phan-doan-p1">
         <img src="img/about/a6.jpg" alt="">
         <div>
@@ -29,7 +29,7 @@
             <br>
         </div>
     </section>
-<%@include file="footer.jsp" %>
+<%@include file="ChanTrang.jsp" %>
 </body>
 
 <script>

@@ -26,7 +26,7 @@
 <% try {
   int id = (int) session.getAttribute("nguoiDungId");
   DonDatHangDAO donDatHangDAO = new DonDatHangDAO();
-  List<DonDatHang> orders = donDatHangDAO.getOrderByUserID(String.valueOf(id));
+  List<DonDatHang> orders = donDatHangDAO.getDonHangByNguoiDungId(String.valueOf(id));
 %>
 <section id="dautrang">
   <a href="index.jsp"><img src="img/logo.png" class="logo" alt=""></a>
@@ -72,7 +72,7 @@
         <% } %>
       </td>
       <td>
-        <a href = "orderdetails?oid=<%=order.getId()%>" class="detail-but">Xem chi tiết</a>
+        <a href = "chiTietDonHang?oid=<%=order.getId()%>" class="detail-but">Xem chi tiết</a>
       </td>
     </tr>
 

@@ -10,27 +10,12 @@ import java.util.List;
 
 public class DonDatHangDAO extends DBconnection{
 
-    public void add(int orderID, int productID, int quantity) {
-        String query = "INSERT INTO orderdetail(orderID, productID, quantity) VALUES (?, ?, ?);";
-        try {
-            PreparedStatement ps = connection.prepareStatement(query);
-            ps.setInt(1,orderID);
-            ps.setInt(2, productID);
-            ps.setInt(3, quantity);
-            ps.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-
-
-    public List<DonDatHang> getOrderByUserID(String userID) {
+    public List<DonDatHang> getDonHangByNguoiDungId(String nguoiDungId) {
         List<DonDatHang> orders = new ArrayList<>();
         String query = "SELECT * FROM webptit.order where userId = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
-            ps.setString(1,userID);
+            ps.setString(1,nguoiDungId);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 DonDatHang donDatHang = new DonDatHang();

@@ -86,7 +86,7 @@ table.table td a:hover {
 table.table td a.edit {
     color: #FFC107;
 }
-table.table td a.delete {
+table.table td a.xoa {
     color: #F44336;
 }
 table.table td i {

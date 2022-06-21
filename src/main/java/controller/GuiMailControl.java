@@ -17,7 +17,7 @@ import java.util.Date;
 import java.util.Enumeration;
 import java.util.Properties;
 
-@WebServlet(name = "GuiMailControl", value = "/contact")
+@WebServlet(name = "GuiMailControl", value = "/lienHe")
 public class GuiMailControl extends HttpServlet {
 
     public GuiMailControl(){
@@ -26,7 +26,7 @@ public class GuiMailControl extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher rd = req.getRequestDispatcher("contact.jsp");
+        RequestDispatcher rd = req.getRequestDispatcher("LienHe.jsp");
         rd.forward(req,resp);
     }
 

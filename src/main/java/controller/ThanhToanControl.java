@@ -12,7 +12,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "ThanhToanControl", value = "/checkout")
+@WebServlet(name = "ThanhToanControl", value = "/thanhToan")
 public class ThanhToanControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -48,7 +48,7 @@ public class ThanhToanControl extends HttpServlet {
                 sanPham = sanPhamDAO.getSanPhamById(gioHangItem.getId());
                 total += gioHangItem.getSoLuongGioHang() * sanPham.getGia();
             }
-            int orderID = thanhToanDAO.add(nguoiDungId, taikhoan, sodienthoai, diachi, total);
+            int orderID = thanhToanDAO.themDonDatHang(nguoiDungId, taikhoan, sodienthoai, diachi, total);
             for (GioHang gioHangItem : gioHang) {
                 int quantity = gioHangItem.getSoLuongGioHang();
                 int sanPhamId = gioHangItem.getId();
@@ -59,8 +59,8 @@ public class ThanhToanControl extends HttpServlet {
             session.removeAttribute("cart-size");
             response.sendRedirect("index.jsp");
         } catch (Exception e) {
-            request.setAttribute("chuaLogin", 1);
-            request.getRequestDispatcher("cart.jsp").forward(request, response);
+            request.setAttribute("chuaDangNhap", 1);
+            request.getRequestDispatcher("GioHang.jsp").forward(request, response);
             e.printStackTrace();
         }
     }

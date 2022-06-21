@@ -26,7 +26,7 @@ public class XoaDonHangControl extends HttpServlet {
 
             thanhToanDAO.xoaDonHang(donDatHangId);
             chiTietDAO.xoaChiTiet(donDatHangId);
-            response.sendRedirect("manageOrder");
+            response.sendRedirect("quanLyDonHang");
         } catch(Exception e) {
             e.printStackTrace();
         }

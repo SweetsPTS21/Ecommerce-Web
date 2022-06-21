@@ -8,7 +8,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "XoaControl", value = "/delete")
+@WebServlet(name = "XoaControl", value = "/xoa")
 public class XoaControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -34,6 +34,6 @@ public class XoaControl extends HttpServlet {
             tongitem += item.getSoLuongGioHang();
         }
         session.setAttribute("cart-size", tongitem);
-        response.sendRedirect("/cart.jsp");
+        response.sendRedirect("/GioHang.jsp");
     }
 }

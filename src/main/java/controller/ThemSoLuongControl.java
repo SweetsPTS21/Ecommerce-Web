@@ -8,7 +8,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "ThemSoLuongControl", value = "/addquantity")
+@WebServlet(name = "ThemSoLuongControl", value = "/themSoLuong")
 public class ThemSoLuongControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -30,14 +30,14 @@ public class ThemSoLuongControl extends HttpServlet {
                 item.setSoLuongGioHang(item.getSoLuongGioHang() + 1);
                 tongitem += 1;
                 session.setAttribute("cart-size", tongitem);
-                response.sendRedirect("/cart.jsp");
+                response.sendRedirect("/GioHang.jsp");
                 return;
             }
         }
         gioHang.add(gioHangItem);
 
         session.setAttribute("cart-size", tongitem);
-        response.sendRedirect("/cart.jsp");
+        response.sendRedirect("/GioHang.jsp");
 
 
 

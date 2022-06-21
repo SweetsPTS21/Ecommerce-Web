@@ -31,6 +31,7 @@
     <div>
         <ul id="thanh-dieu-huong">
             <li><a href="index.jsp" id="1"   class="actived">Trang chủ</a></li>
+            <li><a href="DonDatHang.jsp" id="2" class="">Quay lại</a></li>
         </ul>
     </div>
 </section>

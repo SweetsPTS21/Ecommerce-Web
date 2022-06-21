@@ -26,7 +26,7 @@
 %>
 
 
-<%@include file="header.jsp" %>
+<%@include file="DauTrang.jsp" %>
 
 <section id="banner">
     <h2>TEAM 7</h2>
@@ -49,14 +49,14 @@
         <% for (SanPham sanPham : listSanPham) {
             int id = sanPham.getId();
             if(sanPham.getLoai().equalsIgnoreCase("Laptop")){ %>
-        <div class="san-pham" onclick="window.location.href='detail?sanPhamId=<%= id %>';">
+        <div class="san-pham" onclick="window.location.href='chiTiet?sanPhamId=<%= id %>';">
             <img src="<%= sanPham.getAnh() %>" alt="">
             <div class="mo-ta">
                 <span><%= sanPham.getLoai() %></span>
                 <h5><%= sanPham.getTen() %></h5>
                 <h4><%= sanPham.getGia() %>$</h4>
             </div>
-            <a href="#"><i class="fal fa-shopping-gioHang gioHang"></i></a>
+            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
         </div>
         <% } } %>
     </div>
@@ -69,20 +69,20 @@
         <% for (SanPham sanPham : listSanPham) {
             int id = sanPham.getId();
             if(sanPham.getLoai().equalsIgnoreCase("Phone")){ %>
-        <div class="san-pham" onclick="window.location.href='detail?sanPhamId=<%= id %>';">
+        <div class="san-pham" onclick="window.location.href='chiTiet?sanPhamId=<%= id %>';">
             <img src="<%= sanPham.getAnh() %>" alt="">
             <div class="mo-ta">
                 <span><%= sanPham.getLoai() %></span>
                 <h5><%= sanPham.getTen() %></h5>
                 <h4>$<%= sanPham.getGia() %></h4>
             </div>
-            <a href="detail?sanPhamId=<%= id %>"><i class="fal fa-shopping-gioHang gioHang"></i></a>
+            <a href="chiTiet?sanPhamId=<%= id %>"><i class="fal fa-shopping-cart cart"></i></a>
         </div>
         <% } } %>
     </div>
 </section>
 
-<%@include file="footer.jsp" %>
+<%@include file="ChanTrang.jsp" %>
 
 </body>
 

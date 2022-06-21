@@ -10,7 +10,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "SearchServlet", value = "/search")
+@WebServlet(name = "TimKiemControl", value = "/timKiem")
 public class TimKiemControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -26,6 +26,6 @@ public class TimKiemControl extends HttpServlet {
         List<SanPham> list = sanPhamDAO.timSanPham(tukhoa);
         request.setAttribute("list", list);
         request.setAttribute("tukhoa", tukhoa);
-        request.getRequestDispatcher("shop.jsp").forward(request, response);
+        request.getRequestDispatcher("CuaHang.jsp").forward(request, response);
     }
 }

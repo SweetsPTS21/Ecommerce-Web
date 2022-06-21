@@ -13,7 +13,7 @@
 
 <body>
 
-<%@include file="header.jsp" %>
+<%@include file="DauTrang.jsp" %>
 
 
 <section id="home">
@@ -26,7 +26,7 @@
         <div class="home-reg">
             <div class="wrapper">
                 <h1>Đăng ký</h1>
-                <form method="post" action="/register" accept-charset="UTF-8">
+                <form method="post" action="/dangKy" accept-charset="UTF-8">
                     <input type="email" name="email" placeholder="Email"><br>
                     <input type="text" name="taikhoan" placeholder="Tên"><br>
                     <input type="password" name="matkhau" placeholder="Mật khẩu"><br>
@@ -44,7 +44,7 @@
     </div>
 </section>
 
-<%@include file="footer.jsp" %>
+<%@include file="ChanTrang.jsp" %>
 </body>
 <script>
 

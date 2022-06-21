@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(name = "XoaSanPhamControl", value = "/deleteProduct")
+@WebServlet(name = "XoaSanPhamControl", value = "/xoaSanPham")
 public class XoaSanPhamControl extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -25,6 +25,6 @@ public class XoaSanPhamControl extends HttpServlet {
         SanPhamDAO sanPhamDAO = new SanPhamDAO();
         sanPhamDAO.xoaSanPham(id);
 
-        response.sendRedirect("manageProduct");
+        response.sendRedirect("quanLySanPham");
     }
 }

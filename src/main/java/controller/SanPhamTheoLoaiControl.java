@@ -9,25 +9,25 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ProductByCateControl", value = "/category")
+@WebServlet(name = "SanPhamTheoLoaiControl", value = "/loaiSanPham")
 public class SanPhamTheoLoaiControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         SanPhamDAO productDAO = new SanPhamDAO();
-        String category = request.getParameter("cate");
-        List<SanPham> list = productDAO.timSanPhamTheoLoai(category);
+        String loaiSanPham = request.getParameter("loai");
+        List<SanPham> list = productDAO.timSanPhamTheoLoai(loaiSanPham);
         request.setAttribute("list", list);
-        request.getRequestDispatcher("shop.jsp").forward(request, response);
+        request.getRequestDispatcher("CuaHang.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         SanPhamDAO productDAO = new SanPhamDAO();
-        String category = request.getParameter("cate");
-        List<SanPham> list = productDAO.timSanPhamTheoLoai(category);
+        String loaiSanPham = request.getParameter("loai");
+        List<SanPham> list = productDAO.timSanPhamTheoLoai(loaiSanPham);
         request.setAttribute("list", list);
-        request.getRequestDispatcher("shop.jsp").forward(request, response);
+        request.getRequestDispatcher("CuaHang.jsp").forward(request, response);
     }
 }

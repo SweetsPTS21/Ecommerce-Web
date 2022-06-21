@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet(name = "CapNhatDonHangControl", value = "/updateOrder")
+@WebServlet(name = "CapNhatDonHangControl", value = "/capNhatDonHang")
 public class CapNhatDonHangControl extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -23,8 +23,8 @@ public class CapNhatDonHangControl extends HttpServlet {
             ThanhToanDAO thanhToanDAO = new ThanhToanDAO();
             int donDatHangId = Integer.parseInt(request.getParameter("donDatHangId"));
 
-            thanhToanDAO.updateStatus(donDatHangId, 1);
-            response.sendRedirect("manageOrder");
+            thanhToanDAO.capNhatTrangThai(donDatHangId, 1);
+            response.sendRedirect("quanLyDonHang");
         } catch(Exception e) {
             e.printStackTrace();
         }
