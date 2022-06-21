@@ -42,7 +42,7 @@ public class ThanhToanDAO extends DBconnection{
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 DonDatHang donDatHang = new DonDatHang();
-                donDatHang.setNguoiDungId(rs.getInt("orderId"));
+                donDatHang.setId(rs.getInt("orderId"));
                 donDatHang.setNguoiDungId(rs.getInt("userId"));
                 donDatHang.setTen(rs.getNString("name"));
                 donDatHang.setSodienthoai(rs.getString("phone"));
@@ -68,7 +68,7 @@ public class ThanhToanDAO extends DBconnection{
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                donDatHang.setNguoiDungId(rs.getInt("orderId"));
+                donDatHang.setId(rs.getInt("orderId"));
                 donDatHang.setNguoiDungId(rs.getInt("userId"));
                 donDatHang.setTen(rs.getNString("orderName"));
                 donDatHang.setSodienthoai(rs.getString("phone"));
@@ -89,6 +89,17 @@ public class ThanhToanDAO extends DBconnection{
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(1, status);
             ps.setInt(2, id);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void xoaDonHang(int id) {
+        String sql = "DELETE FROM webptit.order WHERE orderId = ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setInt(1, id);
             ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();

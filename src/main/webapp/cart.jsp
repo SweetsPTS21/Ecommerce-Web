@@ -27,8 +27,16 @@
     String huyen = "";
     String xa = "";
 %>
-<%@include file="header.jsp" %>
 
+<%if(request.getAttribute("chuaLogin") != null) { %>
+<script>
+    if(confirm('Hãy đăng nhập để thanh toán!!!')) {
+        window.location.href = 'login.jsp';
+    }
+</script>
+<% }%>
+
+<%@include file="header.jsp" %>
 
 <section id="cart" class="phan-doan-p1">
     <table width="100%">

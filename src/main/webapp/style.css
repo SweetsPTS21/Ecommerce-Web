@@ -392,8 +392,8 @@ footer .cot {
 
 
 #dautrang .logo {
-    max-height: 75px;
-    max-width: 75px;
+    max-height: 80px;
+    max-width: 200px;
 }
 
 footer .logo {
@@ -772,6 +772,11 @@ td:nth-child(6) {
     background-color: darkgray;
 }
 
+#cart #nut5 {
+    margin-left: 15px;
+    background-color: #b8120e;
+}
+
 #cart table th, td {
     padding: 15px;
     text-align: center;
@@ -782,7 +787,11 @@ td:nth-child(6) {
 }
 
 #cart #nut2:hover {
-    background-color: #08cdc4;
+    background-color: rgba(8, 129, 120, 0.78);
+}
+
+#cart #nut5:hover {
+    background-color: rgba(204, 18, 14, 0.7);
 }
 
 #quan-ly-dau .row {
