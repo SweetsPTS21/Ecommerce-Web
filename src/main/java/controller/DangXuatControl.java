@@ -22,6 +22,7 @@ public class DangXuatControl extends HttpServlet {
         HttpSession session = request.getSession();
         session.removeAttribute("email");
         session.removeAttribute("tenNguoiDung");
+        session.removeAttribute("nguoiDungId");
         session.removeAttribute("isAdmin");
         session.removeAttribute("cart");
         session.removeAttribute("cart-size");

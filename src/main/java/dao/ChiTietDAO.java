@@ -38,9 +38,17 @@ public class ChiTietDAO extends DBconnection {
         catch (Exception e) {
             e.printStackTrace();
         }
-
-
         return chiTietList;
+    }
 
+    public void xoaChiTiet(int id) {
+        String sql = "DELETE FROM orderdetail WHERE orderId = ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

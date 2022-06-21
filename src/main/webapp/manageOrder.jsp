@@ -38,7 +38,7 @@
         </ul>
     </div>
 </section>
-<section id="gioHang" class="phan-doan-p1">
+<section id="cart" class="phan-doan-p1">
     <div id="quan-ly-dau">
         <div class="row">
             <h2>Quản lý <b>đơn hàng</b></h2>
@@ -69,12 +69,16 @@
             <td><%=donDatHang.getNgay()%></td>
             <td>
                 <% if(donDatHang.getTrangthai().equalsIgnoreCase("0")) { %>
-                <button class="but" id="nut2" onclick="function xacnhan() {
+                <button type="button" class="but" id="nut2" onclick="function xacnhan() {
                         window.location.href = 'updateOrder?donDatHangId=<%=donDatHang.getId()%>';
                         } xacnhan()">Xác nhận</button>
                 <% } else { %>
-                <button class="but" id="nut4" disabled>Đã duyệt</button>
+                <button type="button" class="but" id="nut4" disabled>Đã duyệt</button>
                 <% }%>
+                <button type="button" class="but" id="nut5" onclick="function xoa() {
+                        if(confirm('Bạn chắc chắn muốn xóa đơn hàng này!!!')) {
+                        window.location.href = 'xoaDonHang?donDatHangId=<%=donDatHang.getId()%>';
+                } } xoa();">Xóa</button>
             </td>
         </tr>
         <% } %>
