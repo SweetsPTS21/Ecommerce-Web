@@ -11,9 +11,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <title>Ecommerce Website</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="css/jumbotron-narrow.css" rel="stylesheet">
 </head>
 
 <body>
@@ -33,7 +37,14 @@
         window.location.href = 'DangNhap.jsp';
     }
 </script>
-<% }%>
+<% }
+    if(request.getAttribute("daDatHang") != null) { %>
+<script>
+    if(confirm('Đặt hàng thành công!!!')) {
+        window.location.href = 'GioHang.jsp';
+    }
+</script>
+<% } %>
 
 <%@include file="DauTrang.jsp" %>
 
@@ -95,34 +106,92 @@
     </div>
 </section>
 <section class="thong-tin">
-    <div class="form-thong-tin">
+    <div class="row">
+    <div class="col-md-3">
+        <h3>Thông tin giao hàng</h3>
         <% if(session.getAttribute("cart-size") == null ||session.getAttribute("cart-size").toString().equalsIgnoreCase("0") ) {  %>
-        <form action="index.jsp" method="post" accept-charset="UTF-8">
+        <form action="index.jsp" method="post" id="formThanhToan" accept-charset="UTF-8">
             <% } else {%>
-        <form action="/thanhToan" method="post" accept-charset="UTF-8">
+        <form action="/thanhToan" method="post" id="formThanhToan"  accept-charset="UTF-8">
             <% } %>
-            <input required type="text"   name="ten" placeholder = "Họ và tên">
-            <input required type="text"   name="sodienthoai" placeholder = "Số điện thoại">
-            <div class="chon-tinh">
-                <select name="ten_tinh" id="tinh">
-                </select>
-
-                <select name="ten_huyen" id="huyen">
-                </select>
-
-                <select name="ten_xa" id="xa">
-                </select>
+            <div class="form-group">
+                <label>Họ và tên</label>
+                <input required  class="form-control" type="text" name="ten" placeholder = "Họ và tên">
             </div>
-            <input required type="text"   name="diachi" placeholder = "Địa chỉ cụ thể">
-            <input type="submit" class="nut" value="Thanh toán" >
-        </form>
-    </div>
+            <div class="form-group">
+                <label>Số điện thoại</label>
+                <input required class="form-control" type="text" name="sodienthoai" placeholder = "Số điện thoại">
+            </div>
 
+            <div class="form-group">
+                <label>Tỉnh</label>
+                <select class="form-select" name="ten_tinh" id="tinh" aria-label="Mặc định"></select>
+            </div>
+            <div class="form-group">
+                <label>Huyện</label>
+                <select class="form-select" name="ten_huyen" id="huyen" aria-label="Mặc định"></select>
+            </div>
+            <div class="form-group">
+                <label>Xã</label>
+                <select class="form-select" name="ten_xa" id="xa" aria-label="Mặc định"></select>
+            </div>
+            <div class="form-group">
+                <label>Địa chỉ cụ thể</label>
+                <input required class="form-control" type="text" name="diachi" placeholder = "Địa chỉ cụ thể">
+            </div>
+            <div class="form-group">
+                <label>Amount</label>
+                <input class="form-control" data-val="true" data-val-number="The field Amount must be a number." data-val-required="The Amount field is required." id="amount" max="100000000" min="1" name="amount" type="number" value="<%=total * 23000%>" disabled/>
+            </div>
+            <input type="submit" id="COD" class="btn btn-success" value="Đặt hàng" >
+            <h4>Hoặc</h4>
+            <button type="button" class="btn btn-success" id="VNPay">Thanh toán bằng VNPay</button>
+        </form>
+
+    </div>
+    </div>
+    <link href="https://pay.vnpay.vn/lib/vnpay/vnpay.css" rel="stylesheet" />
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="https://pay.vnpay.vn/lib/vnpay/vnpay.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#VNPay").click(function () {
+                $("#COD").click();
+                const amount = $("input[name='amount']").val();
+                const postData = "amount="+ amount + "&bankCode=&language=vn";
+                const submitUrl = "vnpayAjax";
+                $.ajax({
+                    type: "POST",
+                    url: submitUrl,
+                    data: postData,
+                    dataType: 'JSON',
+                    success: function (x) {
+                        if (x.code === '00') {
+                            if (window.vnpay) {
+                                vnpay.open({width: 768, height: 600, url: x.data});
+                                console.log(x.data);
+                            } else {
+                                location.href = x.data;
+                                console.log(x.data);
+                            }
+                            return false;
+                        } else {
+                            alert(x.Message);
+                        }
+                    }
+                });
+                console.log(postData);
+                return false;
+
+            });
+        });
+    </script>
 </section>
 
 
+
 <%@include file="ChanTrang.jsp" %>
-<script src="script.js"></script>
+<script src="js/script.js"></script>
 </body>
 
 <script>

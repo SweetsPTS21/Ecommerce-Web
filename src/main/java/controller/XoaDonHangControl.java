@@ -2,6 +2,7 @@ package controller;
 
 import dao.ThanhToanDAO;
 import dao.ChiTietDAO;
+import dao.VNPayDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,10 +23,12 @@ public class XoaDonHangControl extends HttpServlet {
             request.setCharacterEncoding("UTF-8");
             ThanhToanDAO thanhToanDAO = new ThanhToanDAO();
             ChiTietDAO chiTietDAO = new ChiTietDAO();
+            VNPayDAO vnpayDAO = new VNPayDAO();
             int donDatHangId = Integer.parseInt(request.getParameter("donDatHangId"));
 
-            thanhToanDAO.xoaDonHang(donDatHangId);
+            vnpayDAO.deleteVNPay(donDatHangId);
             chiTietDAO.xoaChiTiet(donDatHangId);
+            thanhToanDAO.xoaDonHang(donDatHangId);
             response.sendRedirect("quanLyDonHang");
         } catch(Exception e) {
             e.printStackTrace();

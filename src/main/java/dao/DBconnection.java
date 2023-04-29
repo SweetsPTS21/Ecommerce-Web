@@ -14,7 +14,7 @@ public class DBconnection {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 String url = "jdbc:mysql://localhost:3306/webptit";
                 String username="root";
-                String password = "27082001";
+                String password = "280301";
                 connection=DriverManager.getConnection (url, username, password);
             } catch (SQLException | ClassNotFoundException e) {
                 e.printStackTrace();

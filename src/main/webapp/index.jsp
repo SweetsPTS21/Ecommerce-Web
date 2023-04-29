@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <title>Ecommerce Website</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -56,7 +56,7 @@
                 <h5><%= sanPham.getTen() %></h5>
                 <h4><%= sanPham.getGia() %>$</h4>
             </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            <a href="#"><i class="fal fa-shopping-cart gio-hang"></i></a>
         </div>
         <% } } %>
     </div>

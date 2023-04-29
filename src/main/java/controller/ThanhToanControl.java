@@ -5,6 +5,7 @@ import dao.ThanhToanDAO;
 import dao.ChiTietDAO;
 import model.GioHang;
 import model.SanPham;
+import ultilities.Tags;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -49,6 +50,8 @@ public class ThanhToanControl extends HttpServlet {
                 total += gioHangItem.getSoLuongGioHang() * sanPham.getGia();
             }
             int orderID = thanhToanDAO.themDonDatHang(nguoiDungId, taikhoan, sodienthoai, diachi, total);
+            Tags.setOrderId(orderID);
+
             for (GioHang gioHangItem : gioHang) {
                 int quantity = gioHangItem.getSoLuongGioHang();
                 int sanPhamId = gioHangItem.getId();
@@ -57,7 +60,10 @@ public class ThanhToanControl extends HttpServlet {
             }
             session.removeAttribute("cart");
             session.removeAttribute("cart-size");
-            response.sendRedirect("index.jsp");
+
+            request.setAttribute("daDatHang", 1);
+            request.getRequestDispatcher("GioHang.jsp").forward(request, response);
+
         } catch (Exception e) {
             request.setAttribute("chuaDangNhap", 1);
             request.getRequestDispatcher("GioHang.jsp").forward(request, response);

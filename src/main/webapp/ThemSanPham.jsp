@@ -11,7 +11,7 @@
   <title>Quản lý sản phẩm</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link href="Sua.css" rel="stylesheet" type="text/css"/>
+  <link href="css/Sua.css" rel="stylesheet" type="text/css"/>
 
 <body>
 <% try {

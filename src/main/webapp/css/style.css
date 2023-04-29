@@ -206,7 +206,7 @@ form button {
 /* Home Page*/
 
 #banner {
-    background-image: url("img/hero.png");
+    background-image: url("../img/hero.png");
     background-repeat: no-repeat;
     display: flex;
     height: 90vh;
@@ -866,4 +866,15 @@ td:nth-child(6) {
 #xa option {
     width: 32%;
     height: 35px;
+}
+
+.row form {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.row form label {
+    font-weight: bold;
 }
