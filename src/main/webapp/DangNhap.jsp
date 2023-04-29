@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <title>Ecommerce Website</title>
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
@@ -35,6 +36,12 @@
                     <input type="password" name="matkhau" placeholder="Mật khẩu"><br>
                     <input type="submit" class="nut" value="Đăng nhập" >
                 </form>
+                <button type="text" onclick="window.location.href='https://accounts.google.com/o/oauth2/auth?scope=email' +
+                 '&redirect_uri=http://localhost:8080/login-google&response_type=code&client_id=477256026930-5hdsip1i8lvklgf77qek3jqnep0v9d2j.apps.googleusercontent.com' +
+                  '&approval_prompt=force'" class="nut nut-google">
+                    <i class="fab fa-google"></i>
+                    Đăng nhập với Google
+                </button>
                 <p class="chua-dang-ky">
                     <a href="DangKy.jsp">Đăng ký ngay</a>
                 </p>

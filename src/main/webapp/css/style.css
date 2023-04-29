@@ -16,6 +16,7 @@ h2 {
 }
 
 h3 {
+    font-size: 30px;
     margin-bottom: 15px;
 }
 
@@ -30,9 +31,10 @@ h6 {
 }
 
 p {
-    font-size: 16px;
+    font-size: 20px;
     color: black;
-    margin: 15px 0 20px 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 
@@ -50,6 +52,9 @@ body {
     width: 100%;
 }
 
+a {
+    text-decoration: none;
+}
 /* dautrang start */
 
 #dautrang {
@@ -143,6 +148,8 @@ body {
 }
 
 .dang-nhap .bao-quanh {
+    overflow: auto;
+    display: block;
     width: 350px;
     padding: 2rem 0 1rem 0;
     margin: 110px auto;
@@ -179,6 +186,9 @@ form button {
     cursor: pointer;
 }
 
+.dang-nhap .bao-quanh a {
+    margin-top: 30px;
+}
 .chua-dang-ky {
     font-size: 1rem;
 }
@@ -594,6 +604,13 @@ td:nth-child(6) {
     font-weight: 600;
 }
 
+.nut-google {
+    background-color: #389ace;
+}
+
+.nut-google:hover {
+    background-color: #80c4e7;
+}
 
 
 /* About */

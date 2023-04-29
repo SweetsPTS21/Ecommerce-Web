@@ -2,6 +2,7 @@ package dao;
 
 
 import model.NguoiDung;
+import ultilities.Tags;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -82,7 +83,7 @@ public class NguoiDungDAO extends DBconnection {
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, email);
-            ps.setString(2, maHoa(matkhau,"WeBteaM07")); // encrypt matkhau
+            ps.setString(2, maHoa(matkhau, Tags.ENCRYPT_KEY)); // encrypt matkhau
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
@@ -107,4 +108,28 @@ public class NguoiDungDAO extends DBconnection {
         }
         return ketqua;
     }
+
+    public NguoiDung loginWithGoogle(String googleUserId) {
+        String sql = "SELECT * FROM users WHERE googleUserId = ?";
+
+        try {
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, googleUserId);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()) {
+                NguoiDung nguoiDung = new NguoiDung();
+                nguoiDung.setId(rs.getInt("userId"));
+                nguoiDung.setTaikhoan(rs.getString("userName"));
+                nguoiDung.setEmail(rs.getString("userEmail"));
+                nguoiDung.setVaitro(Integer.parseInt(rs.getString("isAdmin")));
+                tenNguoiDung = nguoiDung.getTaikhoan();
+                return nguoiDung;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }
