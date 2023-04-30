@@ -23,7 +23,7 @@ public class GoogleUtils {
         String link = Constants.GOOGLE_LINK_GET_USER_INFO + accessToken;
         String response = Request.Get(link).execute().returnContent().asString();
         GoogleUser googleUser = new Gson().fromJson(response, GoogleUser.class);
-        System.out.println(googleUser);
+        System.out.println(googleUser.toString());
         return googleUser;
     }
 }
