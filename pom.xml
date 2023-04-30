@@ -121,9 +121,9 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>com.github.SweetsPTS21</groupId>
-                                    <artifactId>webapp-runner</artifactId>
-                                    <version>8.5.11.3</version>
+                                    <groupId>com.demo</groupId>
+                                    <artifactId>ptit-web-project</artifactId>
+                                    <version>1.0-SNAPSHOT</version>
                                     <destFileName>webapp-runner.jar</destFileName>
                                 </artifactItem>
                             </artifactItems>
