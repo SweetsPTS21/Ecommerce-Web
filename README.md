@@ -1,4 +1,4 @@
-# ptit-web-project-master
+# ptit-web-project-master (heroku version)
 ## Web PTIT project
 - FE: jsp
 - BE: java 8
