@@ -167,8 +167,8 @@ public class SanPhamDAO extends DBconnection {
 
     public List<SanPham> getProductByOrderID(String ID) {
         List<SanPham> list = new ArrayList<>();
-        String sql = "select product.productName, product.productPrice, product.productImg, orderdetail.quantity from webptit.product \n" +
-                "join webptit.orderdetail on product.productId = orderdetail.productId where orderdetail.orderId = ?";
+        String sql = "select product.productName, product.productPrice, product.productImg, orderdetail.quantity from product \n" +
+                "join orderdetail on product.productId = orderdetail.productId where orderdetail.orderId = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, ID);

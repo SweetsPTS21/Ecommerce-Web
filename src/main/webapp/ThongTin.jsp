@@ -17,15 +17,17 @@
         <img src="img/about/a6.jpg" alt="">
         <div>
             <h2>Chúng Tôi Là Ai?</h2>
-            <p>Team 7 - Lập trình Web PTIT.</p>
+            <p>Team 4 - Hướng dịch vụ PTIT.</p>
             <br><br>
             <p>Nguyễn Văn Bách - B19DCCN056</p>
             <br>
             <p>Phạm Thanh Sơn - B19DCCN559</p>
             <br>
-            <p>Nguyễn Thị Lệ Quyên - B19DCCN541</p>
+            <p>Nguyễn Ngọc Duy- B19DCCN140</p>
             <br>
             <p>Phí Minh Quang - B19DCCN523</p>
+            <br>
+            <p>Chưa biết tên- B19DCCN523</p>
             <br>
         </div>
     </section>

@@ -37,7 +37,7 @@
                     <input type="submit" class="nut" value="Đăng nhập" >
                 </form>
                 <button type="text" onclick="window.location.href='https://accounts.google.com/o/oauth2/auth?scope=email' +
-                 '&redirect_uri=https://web-team-ptit.herokuapp.com/login-google&response_type=code&client_id=477256026930-5hdsip1i8lvklgf77qek3jqnep0v9d2j.apps.googleusercontent.com' +
+                 '&redirect_uri=http://localhost:8080/login-google&response_type=code&client_id=477256026930-5hdsip1i8lvklgf77qek3jqnep0v9d2j.apps.googleusercontent.com' +
                   '&approval_prompt=force'" class="nut nut-google">
                     <i class="fab fa-google"></i>
                     Đăng nhập với Google

@@ -11,7 +11,7 @@ import java.util.List;
 
 public class ThanhToanDAO extends DBconnection{
     public int themDonDatHang(int nguoiDungId, String username, String phonenumber, String address, int total) {
-        String sql = "INSERT INTO order (userID, name, phone, address,totalPrice, date, status) VALUES (?, ?, ?, ?, ?, current_date, ?)";
+        String sql = "INSERT INTO orders (userID, name, phone, address,totalPrice, date, status) VALUES (?, ?, ?, ?, ?, current_date, ?)";
         try {
             PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, nguoiDungId);
@@ -34,7 +34,7 @@ public class ThanhToanDAO extends DBconnection{
     }
 
     public List<DonDatHang> getTatCaDonDatHang() {
-        String sql = "SELECT * FROM order";
+        String sql = "SELECT * FROM orders";
         List<DonDatHang> donDatHangList = new ArrayList<>();
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
@@ -60,7 +60,7 @@ public class ThanhToanDAO extends DBconnection{
 
 
     public DonDatHang getDonDatHangById(int id) {
-        String sql = "SELECT * FROM order WHERE orderId = ?";
+        String sql = "SELECT * FROM orders WHERE orderId = ?";
         DonDatHang donDatHang = new DonDatHang();
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
@@ -84,7 +84,7 @@ public class ThanhToanDAO extends DBconnection{
     }
 
     public void capNhatTrangThai(int id, int trangthai) {
-        String sql = "UPDATE order SET status = ? WHERE orderId = ?";
+        String sql = "UPDATE orders SET status = ? WHERE orderId = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(1, trangthai);
@@ -96,7 +96,7 @@ public class ThanhToanDAO extends DBconnection{
     }
 
     public void xoaDonHang(int id) {
-        String sql = "DELETE FROM order WHERE orderId = ?";
+        String sql = "DELETE FROM orders WHERE orderId = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(1, id);

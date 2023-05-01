@@ -26,7 +26,7 @@
 <% try {
   int id = (int) session.getAttribute("nguoiDungId");
   DonDatHangDAO donDatHangDAO = new DonDatHangDAO();
-  List<DonDatHang> orders = donDatHangDAO.getDonHangByNguoiDungId(String.valueOf(id));
+  List<DonDatHang> orders = donDatHangDAO.getDonHangByNguoiDungId(id);
 %>
 <section id="dautrang">
   <a href="index.jsp"><img src="img/logo.png" class="logo" alt=""></a>
