@@ -7,7 +7,7 @@ public class VNPayDAO extends DBconnection{
     public void addVNPay(int orderId, String vnp_TxnRef, String vnp_Amount, String vnp_OrderInfo, String vnp_ResponseCode, String vnp_TransactionNo, String vnp_BankCode, String vnp_PayDate) {
 
         String query = "INSERT INTO vnp_return(orderId, vnp_TxnRef, vnp_Amount, vnp_OrderInfo, vnp_ResponseCode, vnp_TransactionNo, vnp_BankCode, vnp_PayDate) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
-        String query2 = "UPDATE orders SET paymentId = ?, isPaid = ? WHERE orderId = ?;";
+        String query2 = "UPDATE order SET paymentId = ?, isPaid = ? WHERE orderId = ?;";
 
         try {
             PreparedStatement ps = connection.prepareStatement(query);
