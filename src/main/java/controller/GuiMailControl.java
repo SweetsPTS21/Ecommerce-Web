@@ -32,14 +32,17 @@ public class GuiMailControl extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        final String username = "laptrinhweb07@gmail.com";
-        final String password = "webteam07 ";
-        Properties prop = new Properties();
-        prop.put("mail.smtp.host", "smtp.gmail.com");
-        prop.put("mail.smtp.port", "smtp.gmail.com");
-        prop.put("mail.smtp.auth", "smtp.gmail.com");
-        prop.put("mail.smtp.starttls.enable", "true");
-        Session session = Session.getInstance(prop, new Authenticator(){
+        final String username = "bachbnvn123@gmail.com";
+        final String password = "qicyaknmbxjjlmge ";
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.ssl.enable", "true");
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "465");
+//            props.put("mail.debug", "true");
+        props.put("mail.smtps.ssl.trust", "*");
+        props.put("mail.smtp.starttls.enable", "true");
+        Session session = Session.getInstance(props, new Authenticator(){
             protected PasswordAuthentication getPasswordAuthentication(){
                 return new PasswordAuthentication(username,password);
             }
@@ -54,7 +57,8 @@ public class GuiMailControl extends HttpServlet {
                     InternetAddress.parse(emailTo)
             );
             message.setSubject("Nhóm Lập trình 07 xin chào");
-            message.setText("Cảm ơn"+emailName+"đã quan tâm đến sản phẩm của đội ngũ nhóm 07");
+            message.setContent("Cảm ơn "+emailName+ " đã quan tâm đến sản phẩm của đội ngũ nhóm 07\n"
+                    , "text/plain; charset=UTF-8");
             Transport.send(message);
         }
         catch(Exception e){

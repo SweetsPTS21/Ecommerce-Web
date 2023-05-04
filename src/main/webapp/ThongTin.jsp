@@ -23,9 +23,11 @@
             <br>
             <p>Phạm Thanh Sơn - B19DCCN559</p>
             <br>
-            <p>Nguyễn Thị Lệ Quyên - B19DCCN541</p>
+            <p>Nguyễn Ngọc Duy - B19DCCN140</p>
             <br>
             <p>Phí Minh Quang - B19DCCN523</p>
+            <br>
+            <p>Hoàng Duy Đông - B19DCCN184</p>
             <br>
         </div>
     </section>
