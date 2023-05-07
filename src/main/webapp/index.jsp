@@ -29,7 +29,7 @@
 <%@include file="DauTrang.jsp" %>
 
 <section id="banner">
-    <h2>TEAM 7</h2>
+    <h2>TEAM 6</h2>
 
     <% if (session.getAttribute("email") == null) { %>
     <h1>Bán hàng công nghệ</h1>
