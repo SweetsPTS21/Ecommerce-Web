@@ -1,5 +1,5 @@
-# ptit-web-project-master
-## Web PTIT project
+# E-commerce website
+## Project for final report
 - FE: jsp
 - BE: java 8
 - DB: MySql
