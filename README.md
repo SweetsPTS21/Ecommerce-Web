@@ -4,4 +4,4 @@
 - BE: java 8
 - DB: MySql
 - Webserver: Tomcat 8.5.87
-- Các chức năng cơ bản: admin panel, login, tìm kiếm sản phẩm, giỏ hàng, đặt hàng, thanh toán VNPay
+- Các tính năng: admin panel, login, tìm kiếm sản phẩm, giỏ hàng, đặt hàng, thanh toán VNPay
